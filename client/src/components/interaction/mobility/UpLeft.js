@@ -18,7 +18,7 @@ class UpLeft extends Component {
       this.props.moveSpriteUpLeft()
     } else if (this.props.home.x < screenWidth && this.props.home.y < screenHeight) {
       this.props.moveUpLeft()
-    } else if (this.props.sprite.x > screenWidth/12 && this.props.sprite.y > screenHeight/12) {
+    } else if (this.props.sprite.x > screenWidth/12 && this.props.sprite.y > screenHeight/24) {
       this.props.moveSpriteUpLeft()
     } else {
       return

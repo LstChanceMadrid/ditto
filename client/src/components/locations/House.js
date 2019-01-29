@@ -6,7 +6,7 @@ import {screenWidth, screenHeight} from '../../constants/screenDimensions'
 
 import Ditto from '../sprites/Ditto'
 
-class NewLevel extends Component {
+class House extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -28,7 +28,7 @@ class NewLevel extends Component {
 }
 
 
-export default connect()(NewLevel)
+export default connect()(House)
 
 let styles = StyleSheet.create({
     container: {

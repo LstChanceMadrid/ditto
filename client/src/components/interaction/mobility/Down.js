@@ -16,7 +16,7 @@ return
                 this.props.moveSpriteDown()
             } else if (this.props.home.y > -screenHeight) {
             this.props.moveDown()
-            } else if (this.props.sprite.y < screenHeight*33/12) {
+            } else if (this.props.sprite.y < screenHeight*31/12) {
                 this.props.moveSpriteDown()
             } else {
                 return

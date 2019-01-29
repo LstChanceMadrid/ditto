@@ -12,12 +12,11 @@ class Up extends Component {
           return
       } else if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*75/48 > this.props.sprite.y && this.props.sprite.y > screenHeight*73/48) {
         return
-      } else
-    if (this.props.sprite.y > screenHeight*2.5) {
+      } else if (this.props.sprite.y > screenHeight*2.5) {
       this.props.moveSpriteUp()
     } else if (this.props.home.y < screenHeight) {
       this.props.moveUp()
-    } else if (this.props.sprite.y > screenHeight/12) {
+    } else if (this.props.sprite.y > screenHeight*2/36) {
       this.props.moveSpriteUp()
     } else {
       return

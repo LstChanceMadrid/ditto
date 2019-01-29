@@ -17,7 +17,7 @@ class UpRight extends Component {
       this.props.moveSpriteUpRight()
     } else if (this.props.home.x > -screenWidth && this.props.home.y < screenHeight) {
       this.props.moveUpRight()
-    } else if (this.props.sprite.x < screenWidth*34/12 && this.props.sprite.y > screenHeight/12) {
+    } else if (this.props.sprite.x < screenWidth*34/12 && this.props.sprite.y > screenHeight/24) {
       this.props.moveSpriteUpRight()
     } else {
       return

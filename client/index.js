@@ -9,7 +9,7 @@ import thunk from 'redux-thunk'
 
 import rootReducer from './src/store/reducers'
 
-import NewLevel from './src/components/locations/NewLevel'
+import House from './src/components/locations/House'
 const middleware = [thunk]
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
@@ -26,11 +26,11 @@ Navigation.registerComponent(`Home`, () => (props) => (
     </Provider>
 ), () => Home);
 
-Navigation.registerComponent(`NewLevel`, () => (props) => (
+Navigation.registerComponent(`House`, () => (props) => (
     <Provider store={store}>
-        <NewLevel {...props}/>
+        <House {...props}/>
     </Provider>
-), () => NewLevel);
+), () => House);
 
 Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({

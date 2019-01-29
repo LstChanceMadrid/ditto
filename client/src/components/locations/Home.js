@@ -25,11 +25,24 @@ import HomeRight from './home/HomeRight';
 import HomeDownLeft from './home/HomeDownLeft';
 import HomeDownCenter from './home/HomeDownCenter';
 import HomeDownRight from './home/HomeDownRight';
+import { actionType } from '../../store/actionTypes';
 
 
 class Home extends Component {
 
   render() {
+
+    if (this.props.sprite.x > screenWidth/2 && this.props.sprite.x < screenWidth && this.props.sprite.y > screenHeight*18/12 && this.props.sprite.y < screenHeight*19/12 ) {
+      // this.props.resetDitto()
+      Navigation.setRoot({
+        root: {
+          component: {
+            id: 'House',
+            name: 'House'
+          }
+        }
+      })
+    }
 
     return (
       <View style={{position: 'absolute', top: -screenHeight, left: -screenWidth, backgroundColor: 'rgba(150, 150, 150, 0.7)', marginTop: this.props.home.y, marginLeft: this.props.home.x}} width={screenWidth*3} height={screenHeight*3}>
@@ -65,7 +78,13 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(Home)
+const mapDispatchToProps = dispatch => {
+  return {
+    resetDitto: () => dispatch({type: actionType.RESET_DITTO})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
 
 
 const styles = StyleSheet.create({
