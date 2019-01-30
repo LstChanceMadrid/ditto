@@ -3,6 +3,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
 import {actionType} from '../../../store/actionTypes'
 import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
+import {border} from './constants/borders'
 
 class Up extends Component {
 
@@ -18,7 +19,7 @@ class Up extends Component {
         this.props.moveSpriteUp()
       } else if (this.props.home.y < screenHeight) {
         this.props.moveUp()
-      } else if (this.props.sprite.y > screenHeight*2/36) {
+      } else if (this.props.sprite.y > border.homeTopBorder) {
         this.props.moveSpriteUp()
       } else {
         return

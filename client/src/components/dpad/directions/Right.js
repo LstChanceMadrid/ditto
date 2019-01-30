@@ -3,6 +3,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
 import {actionType} from '../../../store/actionTypes'
 import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
+import {border} from './constants/borders'
 
 class Right extends Component {
 
@@ -14,7 +15,7 @@ class Right extends Component {
         this.props.moveSpriteRight()
       } else if (this.props.home.x > -screenWidth) {
         this.props.moveRight()
-      } else if (this.props.sprite.x < screenWidth*34/12) {
+      } else if (this.props.sprite.x < border.homeRightBorder) {
         this.props.moveSpriteRight()
       } else {
         return

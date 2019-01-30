@@ -3,7 +3,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
 import {actionType} from '../../../store/actionTypes'
 import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
-
+import {border} from './constants/borders'
 
 class DownLeft extends Component {
 
@@ -19,7 +19,7 @@ class DownLeft extends Component {
         this.props.moveSpriteDownLeft()
       } else if (this.props.home.x < screenWidth && this.props.home.y > -screenHeight) {
         this.props.moveDownLeft()
-      } else if (this.props.sprite.x > screenWidth/12 && this.props.sprite.y < screenHeight*63/24) {
+      } else if (this.props.sprite.x > border.homeLeftBorder && this.props.sprite.y < border.homeBottomBorder) {
         this.props.moveSpriteDownLeft()
       } else {
         return

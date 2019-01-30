@@ -3,6 +3,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
 import {actionType} from '../../../store/actionTypes'
 import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
+import {border} from './constants/borders'
 
 class DownRight extends Component {
 
@@ -19,7 +20,7 @@ class DownRight extends Component {
         this.props.moveSpriteDownRight()
       } else if (this.props.home.x > -screenWidth && this.props.home.y > -screenHeight) {
         this.props.moveDownRight()
-      } else if (this.props.sprite.x < screenWidth*33/12 && this.props.sprite.y < screenHeight*63/24) {
+      } else if (this.props.sprite.x < border.homeRightBorder && this.props.sprite.y < border.homeBottomBorder) {
         this.props.moveSpriteDownRight()
       } else {
         return

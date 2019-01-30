@@ -3,6 +3,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
 import {actionType} from '../../../store/actionTypes'
 import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
+import {border} from './constants/borders'
 
 class Left extends Component {
 

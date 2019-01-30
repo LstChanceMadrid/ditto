@@ -3,6 +3,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
 import {actionType} from '../../../store/actionTypes'
 import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
+import {border} from './constants/borders'
 
 class Down extends Component {
 
@@ -10,15 +11,15 @@ class Down extends Component {
         // HOME
         
         if(this.props.location.name === 'home'){
-            if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*35/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*34/24) {
+            if (this.props.sprite.x < screenWidth*14/12 && this.props.sprite.x > screenWidth*21/24 && screenHeight*35/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*34/24) {
                 return
             } else if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*37/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*35/24) {
-return
+                return
             } else if (this.props.sprite.y < screenHeight*5/12) {
                 this.props.moveSpriteDown()
             } else if (this.props.home.y > -screenHeight) {
             this.props.moveDown()
-            } else if (this.props.sprite.y < screenHeight*63/24) {
+            } else if (this.props.sprite.y < border.homeBottomBorder) {
                 this.props.moveSpriteDown()
             } else {
                 return

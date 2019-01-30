@@ -3,57 +3,61 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
 import {actionType} from '../../../store/actionTypes'
 import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
+import {border} from './constants/borders'
 
 class UpRight extends Component {
 
   upRightButton = () => {
+    const sprite = this.props.sprite
+    const location = this.props.location
+    const home = this.props.home
+
     // HOME
-        
-    if(this.props.location.name === 'home'){
-      if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*36/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*34/24) {
+    if(location.name === 'home'){
+      if (screenWidth*14/12 > sprite.x && sprite.x > screenWidth*21/24 && screenHeight*36/24 > sprite.y && sprite.y > screenHeight*34/24) {
           return
-      } else if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*75/48 > this.props.sprite.y && this.props.sprite.y > screenHeight*73/48) {
+      } else if (screenWidth*14/12 > sprite.x && sprite.x > screenWidth*21/24 && screenHeight*75/48 > sprite.y && sprite.y > screenHeight*73/48) {
         return
-      } else if (this.props.sprite.x < screenWidth/2 && this.props.sprite.y < screenHeight/2 && this.props.sprite.y > screenHeight/12) {
+      } else if (sprite.x < screenWidth/2 && sprite.y < screenHeight/2 && sprite.y > screenHeight/12) {
       this.props.moveSpriteUpRight()
-      } else if (this.props.home.x > -screenWidth && this.props.home.y < screenHeight) {
+      } else if (home.x > -screenWidth && home.y < screenHeight) {
         this.props.moveUpRight()
-      } else if (this.props.sprite.x < screenWidth*34/12 && this.props.sprite.y > screenHeight/24) {
+      } else if (sprite.x < border.homeRightBorder && sprite.y > border.homeTopBorder) {
         this.props.moveSpriteUpRight()
       } else {
         return
       }
     }
-    // HOUSE
 
-    if (this.props.location.name === 'house') {
+    // HOUSE
+    if (location.name === 'house') {
         
     }
   }
 
-    render() {
-        return (
-            <TouchableOpacity style={styles.dPadButtonUpRight} onPress={() => this.upRightButton()}>
-              <View><Text style={styles.direction}>UP/Right</Text></View>
-            </TouchableOpacity>
-        )
-    }
+  render() {
+    return (
+      <TouchableOpacity style={styles.dPadButtonUpRight} onPress={() => this.upRightButton()}>
+        <View><Text style={styles.direction}>UP/Right</Text></View>
+      </TouchableOpacity>
+    )
+  }
 }
 
 const mapStateToProps = state => {
-    return {
-      ...state,
-      sprite: {
-        ...state.sprite
-      }
+  return {
+    ...state,
+    sprite: {
+      ...state.sprite
     }
   }
+}
 
-  const mapDispatchToProps = dispatch => {
-    return {
-        moveUpRight: () =>  dispatch({type: actionType.MOVE_UP_RIGHT}),
-        moveSpriteUpRight: () => dispatch({type: actionType.MOVE_SPRITE_UP_RIGHT})
-    }
+const mapDispatchToProps = dispatch => {
+  return {
+    moveUpRight: () =>  dispatch({type: actionType.MOVE_UP_RIGHT}),
+    moveSpriteUpRight: () => dispatch({type: actionType.MOVE_SPRITE_UP_RIGHT})
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UpRight)
