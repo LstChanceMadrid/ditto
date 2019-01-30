@@ -15,7 +15,7 @@ import {connect} from 'react-redux'
 import {screenHeight, screenWidth} from '../../constants/screenDimensions'
 
 import Ditto from '../sprites/Ditto'
-import DPad from '../interaction/DPad'
+import DPad from '../dpad/DPad'
 import HomeUpLeft from './home/HomeUpLeft';
 import HomeUpCenter from './home/HomeUpCenter';
 import HomeUpRight from './home/HomeUpRight';
@@ -30,10 +30,10 @@ import { actionType } from '../../store/actionTypes';
 
 class Home extends Component {
 
-  render() {
+  componentWillReceiveProps = () => {
+    
 
-    if (this.props.sprite.x > screenWidth/2 && this.props.sprite.x < screenWidth && this.props.sprite.y > screenHeight*18/12 && this.props.sprite.y < screenHeight*19/12 ) {
-      // this.props.resetDitto()
+    if (this.props.sprite.x > screenWidth/2 && this.props.sprite.x < screenWidth && this.props.sprite.y > screenHeight*16/12 && this.props.sprite.y < screenHeight*19/12 ) {
       Navigation.setRoot({
         root: {
           component: {
@@ -43,6 +43,9 @@ class Home extends Component {
         }
       })
     }
+  }
+
+  render() {
 
     return (
       <View style={{position: 'absolute', top: -screenHeight, left: -screenWidth, backgroundColor: 'rgba(150, 150, 150, 0.7)', marginTop: this.props.home.y, marginLeft: this.props.home.x}} width={screenWidth*3} height={screenHeight*3}>
@@ -80,7 +83,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    resetDitto: () => dispatch({type: actionType.RESET_DITTO})
+    resetDitto: () => dispatch({type: actionType.RESET_DITTO}),
+    activateWild: () => dispatch({type: actionType.ACTIVATE_WILD})
   }
 }
 

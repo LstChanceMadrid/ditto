@@ -7,6 +7,7 @@ class HomeLeft extends Component {
     render() {
         return (
         <View style={styles.container} width={screenWidth} height={screenHeight}>
+            <View style={styles.leftdown}></View>
             <View style={styles.left}></View>
             <Text>HomeLeft</Text>
             <View style={styles.nextLevel} width={screenWidth/2} height={screenHeight/4}></View>
@@ -34,5 +35,13 @@ const styles = StyleSheet.create({
         left: 0,
         width: screenWidth/12,
         height: screenHeight
+    },
+    leftdown: {
+        backgroundColor: 'brown',
+        position: 'absolute',
+        top: screenHeight*9/12,
+        left: screenWidth/2,
+        width: screenWidth/2,
+        height: screenHeight/12
     }
 })

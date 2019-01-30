@@ -7,6 +7,8 @@ import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
 class Down extends Component {
 
     homeDownButton = () => {
+        // HOME
+        
         if(this.props.location.name === 'home'){
             if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*35/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*34/24) {
                 return
@@ -16,13 +18,18 @@ return
                 this.props.moveSpriteDown()
             } else if (this.props.home.y > -screenHeight) {
             this.props.moveDown()
-            } else if (this.props.sprite.y < screenHeight*31/12) {
+            } else if (this.props.sprite.y < screenHeight*63/24) {
                 this.props.moveSpriteDown()
             } else {
                 return
             }
         }
 
+        // HOUSE
+
+    if (this.props.location.name === 'house') {
+      
+    }
 
 
 

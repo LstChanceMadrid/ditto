@@ -4,14 +4,14 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
 import { screenHeight, screenWidth} from '../../constants/screenDimensions'
 
-import UpLeft from './mobility/UpLeft'
-import Up from './mobility/Up'
-import UpRight from './mobility/UpRight'
-import Left from './mobility/Left'
-import Right from './mobility/Right'
-import DownLeft from './mobility/DownLeft'
-import Down from './mobility/Down'
-import DownRight from './mobility/DownRight'
+import UpLeft from './directions/UpLeft'
+import Up from './directions/Up'
+import UpRight from './directions/UpRight'
+import Left from './directions/Left'
+import Right from './directions/Right'
+import DownLeft from './directions/DownLeft'
+import Down from './directions/Down'
+import DownRight from './directions/DownRight'
 import { actionType } from '../../store/actionTypes';
 
 class DPad extends Component {
@@ -19,7 +19,6 @@ class DPad extends Component {
     newLevel = () => {
         if (this.props.location.name === 'home' && this.props.sprite.x > screenWidth && this.props.sprite.x < screenWidth*16/12) {
           if (this.props.sprite.y > screenHeight*17/12 && this.props.sprite.y < screenHeight*19/12) {
-            this.props.resetDitto()
             Navigation.setRoot({
               root: {
                 component: {

@@ -7,8 +7,9 @@ import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
 class Left extends Component {
 
     leftButton = () => {
-      if (this.props.location.name === 'home') {
+      // HOME
         
+      if (this.props.location.name === 'home') {
         if (this.props.sprite.x > screenWidth*2.5) {
           this.props.moveSpriteLeft()
         } else if (this.props.home.x < screenWidth) {
@@ -19,7 +20,35 @@ class Left extends Component {
           return
         }
       }
+
+      // HOUSE
+
+      if (this.props.location.name === 'house') {
+        if (this.props.sprite.x > screenWidth/12) {
+          this.props.moveSpriteLeft()
+        } else {
+          return
+        }
       }
+
+
+      // if (this.props.sprite.x < screenWidth*7/12 && this.props.sprite.y > screenHeight*27/12) {
+      //   this.props.activateWild()
+      // }
+
+      // activate wild counter from verticle right to left
+
+      if (this.props.sprite.x > screenWidth*13/24 && this.props.sprite.x < screenWidth*15/24 && this.props.sprite.y > screenHeight*56/24) {
+        this.props.activateWild()
+      }
+
+
+      if (this.props.wild.isActive) {
+        this.props.incrementStepCounter()
+      }
+
+
+    }
 
 
     render() {
@@ -44,7 +73,9 @@ const mapStateToProps = state => {
   const mapDispatchToProps = (dispatch) => {
     return {
         moveLeft: () =>  dispatch({type: actionType.MOVE_LEFT}),
-        moveSpriteLeft: () => dispatch({type: actionType.MOVE_SPRITE_LEFT})
+        moveSpriteLeft: () => dispatch({type: actionType.MOVE_SPRITE_LEFT}),
+        incrementStepCounter: () => dispatch({type: actionType.INCREMENT_WILD_STEP_COUNTER}),
+        activateWild: () => dispatch({type: actionType.ACTIVATE_WILD})
     }
 }
 

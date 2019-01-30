@@ -7,15 +7,42 @@ import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
 class Right extends Component {
 
   rightButton = () => {
-    if (this.props.sprite.x < screenWidth/2) {
-      this.props.moveSpriteRight()
-    } else if (this.props.home.x > -screenWidth) {
-      this.props.moveRight()
-    } else if (this.props.sprite.x < screenWidth*34/12) {
-      this.props.moveSpriteRight()
-    } else {
-      return
+    // HOME
+
+    if (this.props.location.name === 'home') {
+      if (this.props.sprite.x < screenWidth/2) {
+        this.props.moveSpriteRight()
+      } else if (this.props.home.x > -screenWidth) {
+        this.props.moveRight()
+      } else if (this.props.sprite.x < screenWidth*34/12) {
+        this.props.moveSpriteRight()
+      } else {
+        return
+      }
     }
+
+    // HOUSE
+
+    if (this.props.location.name === 'house') {
+      if (this.props.sprite.x < screenWidth*10/12) {
+        this.props.moveSpriteRight()
+      }
+    }
+
+
+
+    if (this.props.sprite.x < screenWidth*7/12 && this.props.sprite.x > screenWidth*6/12 && this.props.sprite.y > screenHeight*56/24) {
+      this.props.deactivateWild()
+    }
+
+    if (this.props.wild.isActive) {
+      this.props.incrementStepCounter()
+    }
+
+
+
+
+
   }
 
     render() {
@@ -40,7 +67,9 @@ const mapStateToProps = state => {
   const mapDispatchToProps = dispatch => {
     return {
         moveRight: () =>  dispatch({type: actionType.MOVE_RIGHT}),
-        moveSpriteRight: () => dispatch({type: actionType.MOVE_SPRITE_RIGHT})
+        moveSpriteRight: () => dispatch({type: actionType.MOVE_SPRITE_RIGHT}),
+        deactivateWild: () => dispatch({type: actionType.DEACTIVATE_WILD}),
+        incrementStepCounter: () => dispatch({type: actionType.INCREMENT_WILD_STEP_COUNTER})
     }
 }
   

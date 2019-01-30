@@ -7,21 +7,29 @@ import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
 class Up extends Component {
 
   upButton = () => {
+    // HOME
+        
     if(this.props.location.name === 'home'){
       if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*36/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*34/24) {
-          return
+        return
       } else if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*75/48 > this.props.sprite.y && this.props.sprite.y > screenHeight*73/48) {
         return
       } else if (this.props.sprite.y > screenHeight*2.5) {
-      this.props.moveSpriteUp()
-    } else if (this.props.home.y < screenHeight) {
-      this.props.moveUp()
-    } else if (this.props.sprite.y > screenHeight*2/36) {
-      this.props.moveSpriteUp()
-    } else {
-      return
+        this.props.moveSpriteUp()
+      } else if (this.props.home.y < screenHeight) {
+        this.props.moveUp()
+      } else if (this.props.sprite.y > screenHeight*2/36) {
+        this.props.moveSpriteUp()
+      } else {
+        return
+      }
     }
-  }
+
+  // HOUSE
+
+    if (this.props.location.name === 'house') {
+        
+    }
   }
 
     render() {
