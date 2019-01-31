@@ -7,6 +7,9 @@ import {border} from './constants/borders'
 
 class UpLeft extends Component {
 
+  componentDidMount = () => {
+    hold = null
+}
 
   upLeftButton = () => {
     // HOME
@@ -32,11 +35,20 @@ class UpLeft extends Component {
   if (this.props.location.name === 'house') {
       
   }
+
+
+  if (this.props.sprite.x < screenWidth*20/36 && this.props.sprite.x > screenWidth*19/36 && this.props.sprite.y > screenHeight*56/24) {
+    this.props.activateWild()
+  }
+
+  if (this.props.wild.isActive) {
+    this.props.incrementStepCounter()
+  }
 }
 
     render() {
         return (
-            <TouchableOpacity style={styles.dPadButtonUpLeft} onPress={() => this.upLeftButton()}>
+            <TouchableOpacity style={styles.dPadButtonUpLeft} onPressIn={() => this.hold = setInterval(this.upLeftButton, 100)}  onPressOut={() => clearInterval(this.hold)}>
               <View><Text style={styles.direction}>UP/Left</Text></View>
             </TouchableOpacity>
         )
@@ -55,7 +67,9 @@ const mapStateToProps = state => {
   const mapDispatchToProps = dispatch => {
     return {
         moveUpLeft: () =>  dispatch({type: actionType.MOVE_UP_LEFT}),
-        moveSpriteUpLeft: () => dispatch({type: actionType.MOVE_SPRITE_UP_LEFT})
+        moveSpriteUpLeft: () => dispatch({type: actionType.MOVE_SPRITE_UP_LEFT}),
+        incrementStepCounter: () => dispatch({type: actionType.INCREMENT_WILD_STEP_COUNTER}),
+        activateWild: () => dispatch({type: actionType.ACTIVATE_WILD}),deactivateWild: () => dispatch({type: actionType.DEACTIVATE_WILD})
     }
 }
   

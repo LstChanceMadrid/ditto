@@ -9,7 +9,7 @@ export const border = {
 
     // 3Wx3H screen
     homeTopBorder: screenHeight*2/36,
-    homeRightBorder: screenWidth*34/12,
-    homeBottomBorder: screenHeight*63/24,
+    homeRightBorder: screenWidth*67/24,
+    homeBottomBorder: screenHeight*64/24,
     homeLeftBorder: screenWidth/12
 }

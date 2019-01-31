@@ -7,7 +7,11 @@ import {border} from './constants/borders'
 
 class Down extends Component {
 
-    homeDownButton = () => {
+    componentDidMount = () => {
+        hold = null
+    }
+
+    downButton = () => {
         // HOME
         
         if(this.props.location.name === 'home'){
@@ -28,18 +32,24 @@ class Down extends Component {
 
         // HOUSE
 
-    if (this.props.location.name === 'house') {
-      
+            // if (this.props.location.name === 'house') {
+            
+            // }
+            
+            if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.y > screenHeight*85/36) {
+                this.props.activateWild()
+            }
+            if (this.props.wild.isActive) {
+                this.props.incrementStepCounter()
+              }
     }
 
-
-
-    }
+    
 
     render() {
-        console.log(this.props)
+
         return (
-            <TouchableOpacity style={styles.dPadButtonDown} onPress={() => this.homeDownButton()}>
+            <TouchableOpacity style={styles.dPadButtonDown} onPressIn={() => this.hold = setInterval(this.downButton, 100)}  onPressOut={() => clearInterval(this.hold)}>
               <View><Text style={styles.direction}>DOWN</Text></View>
             </TouchableOpacity>
         )
@@ -58,7 +68,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         moveDown: () =>  dispatch({type: actionType.MOVE_DOWN}),
-        moveSpriteDown: () => dispatch({type: actionType.MOVE_SPRITE_DOWN})
+        moveSpriteDown: () => dispatch({type: actionType.MOVE_SPRITE_DOWN}),
+        incrementStepCounter: () => dispatch({type: actionType.INCREMENT_WILD_STEP_COUNTER}),
+        activateWild: () => dispatch({type: actionType.ACTIVATE_WILD}),deactivateWild: () => dispatch({type: actionType.DEACTIVATE_WILD})
     }
 }
 

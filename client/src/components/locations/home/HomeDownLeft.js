@@ -47,9 +47,9 @@ const styles = StyleSheet.create({
     grass: {
         backgroundColor: 'green',
         position: 'absolute',
-        left: screenWidth/12,
-        bottom: screenHeight*3/12,
-        width: screenWidth*13/24,
-        height: screenHeight/3
+        left: screenWidth*3/36,
+        bottom: screenHeight*9/36,
+        width: screenWidth*19/36,
+        height: screenHeight*12/36
     }
 })

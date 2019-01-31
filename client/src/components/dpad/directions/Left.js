@@ -7,6 +7,10 @@ import {border} from './constants/borders'
 
 class Left extends Component {
 
+  componentDidMount = () => {
+    hold = null
+}
+
     leftButton = () => {
       // HOME
         
@@ -39,7 +43,7 @@ class Left extends Component {
 
       // activate wild counter from verticle right to left
 
-      if (this.props.sprite.x > screenWidth*13/24 && this.props.sprite.x < screenWidth*15/24 && this.props.sprite.y > screenHeight*56/24) {
+      if (this.props.sprite.x < screenWidth*20/36 && this.props.sprite.x > screenWidth*19/36 && this.props.sprite.y > screenHeight*85/36) {
         this.props.activateWild()
       }
 
@@ -54,7 +58,7 @@ class Left extends Component {
 
     render() {
         return (
-            <TouchableOpacity  style={styles.dPadButtonLeft} onPress={() => this.leftButton()}>
+            <TouchableOpacity  style={styles.dPadButtonLeft} onPressIn={() => this.hold = setInterval(this.leftButton, 100)}  onPressOut={() => clearInterval(this.hold)}>
               <View><Text style={styles.direction}>LEFT</Text></View>
             </TouchableOpacity>
         )
@@ -76,7 +80,7 @@ const mapStateToProps = state => {
         moveLeft: () =>  dispatch({type: actionType.MOVE_LEFT}),
         moveSpriteLeft: () => dispatch({type: actionType.MOVE_SPRITE_LEFT}),
         incrementStepCounter: () => dispatch({type: actionType.INCREMENT_WILD_STEP_COUNTER}),
-        activateWild: () => dispatch({type: actionType.ACTIVATE_WILD})
+        activateWild: () => dispatch({type: actionType.ACTIVATE_WILD}),deactivateWild: () => dispatch({type: actionType.DEACTIVATE_WILD})
     }
 }
 

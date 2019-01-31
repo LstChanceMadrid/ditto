@@ -13,7 +13,18 @@ class Ditto extends Component {
 
     render() {
         return (
-            <Image style={{position: 'absolute', top: this.props.sprite.y, left: this.props.sprite.x}} width={screenWidth/11} height={screenHeight/9} source={{uri: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png"}}/>
+            <Image
+                style={{
+                    position: 'absolute',
+                    top: this.props.sprite.y,
+                    left: this.props.sprite.x,
+                    width: screenWidth*4/36,
+                    height: screenHeight*4/36
+                }} 
+                source={{uri:
+                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png"
+                }}
+            />    
         )
     }
 }

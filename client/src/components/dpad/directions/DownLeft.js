@@ -7,6 +7,10 @@ import {border} from './constants/borders'
 
 class DownLeft extends Component {
 
+  componentDidMount = () => {
+    hold = null
+}
+
   downLeftButton = () => {
     // HOME
 
@@ -31,11 +35,20 @@ class DownLeft extends Component {
     if (this.props.location.name === 'house') {
         
     }
+    if (this.props.sprite.x < screenWidth*20/36 && this.props.sprite.x > screenWidth*19/36 && this.props.sprite.y > screenHeight*85/36) {
+      this.props.activateWild()
+    }
+    if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.y < screenHeight*86/36 && this.props.sprite.y > screenHeight*85/36) {
+      this.props.activateWild()
+    }
+    if (this.props.wild.isActive) {
+      this.props.incrementStepCounter()
+    }
   }
   
     render() {
         return (
-            <TouchableOpacity style={styles.dPadButtonUpRight} onPress={() => this.downLeftButton()}>
+            <TouchableOpacity style={styles.dPadButtonUpRight} onPressIn={() => this.hold = setInterval(this.downLeftButton, 100)}  onPressOut={() => clearInterval(this.hold)}>
               <View><Text style={styles.direction}>DOWN/Left</Text></View>
             </TouchableOpacity>
         )
@@ -54,7 +67,10 @@ const mapStateToProps = state => {
   const mapDispatchToProps = dispatch => {
     return {
         moveDownLeft: () =>  dispatch({type: actionType.MOVE_DOWN_LEFT}),
-        moveSpriteDownLeft: () => dispatch({type: actionType.MOVE_SPRITE_DOWN_LEFT})
+        moveSpriteDownLeft: () => dispatch({type: actionType.MOVE_SPRITE_DOWN_LEFT}),
+        incrementStepCounter: () => dispatch({type: actionType.INCREMENT_WILD_STEP_COUNTER}),
+        activateWild: () => dispatch({type: actionType.ACTIVATE_WILD}),
+        deactivateWild: () => dispatch({type: actionType.DEACTIVATE_WILD}),
     }
 }
 

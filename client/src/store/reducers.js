@@ -41,16 +41,16 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 dPad: {
-                    x: state.dPad.x - screenWidth/24,
-                    y: state.dPad.y - screenHeight/24
+                    x: state.dPad.x - screenWidth/36,
+                    y: state.dPad.y - screenHeight/36
                 },
                 sprite: {
-                    x: state.sprite.x - screenWidth/24,
-                    y: state.sprite.y - screenHeight/24
+                    x: state.sprite.x - screenWidth/36,
+                    y: state.sprite.y - screenHeight/36
                 },
                 home: {
-                    x: state.home.x + screenWidth/24,
-                    y: state.home.y + screenHeight/24
+                    x: state.home.x + screenWidth/36,
+                    y: state.home.y + screenHeight/36
                 }
             }
         }
@@ -58,8 +58,8 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 sprite: {
-                    x: state.sprite.x - screenWidth/24,
-                    y: state.sprite.y - screenHeight/24
+                    x: state.sprite.x - screenWidth/36,
+                    y: state.sprite.y - screenHeight/36
                 }
             }
         }
@@ -70,15 +70,15 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 dPad: {
                     ...state.dPad,
-                    y: state.dPad.y - screenHeight/24
+                    y: state.dPad.y - screenHeight/36
                 },
                 sprite: {
                     ...state.sprite,
-                    y: state.sprite.y - screenHeight/24
+                    y: state.sprite.y - screenHeight/36
                 },
                 home: {
                     ...state.home,
-                    y: state.home.y + screenHeight/24
+                    y: state.home.y + screenHeight/36
                 }
             }
         }
@@ -87,7 +87,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 sprite: {
                     ...state.sprite,
-                    y: state.sprite.y - screenHeight/24
+                    y: state.sprite.y - screenHeight/36
                 }
             }
         }
@@ -97,16 +97,16 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 dPad: {
-                    x: state.dPad.x + screenWidth/24,
-                    y: state.dPad.y - screenHeight/24
+                    x: state.dPad.x + screenWidth/36,
+                    y: state.dPad.y - screenHeight/36
                 },
                 sprite: {
-                    x: state.sprite.x + screenWidth/24,
-                    y: state.sprite.y - screenHeight/24
+                    x: state.sprite.x + screenWidth/36,
+                    y: state.sprite.y - screenHeight/36
                 },
                 home: {
-                    x: state.home.x - screenWidth/24,
-                    y: state.home.y + screenHeight/24
+                    x: state.home.x - screenWidth/36,
+                    y: state.home.y + screenHeight/36
                 }
             }
         }
@@ -114,8 +114,8 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 sprite: {
-                    x: state.sprite.x + screenWidth/24,
-                    y: state.sprite.y - screenHeight/24
+                    x: state.sprite.x + screenWidth/36,
+                    y: state.sprite.y - screenHeight/36
                 }
             }
         }
@@ -126,15 +126,15 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 dPad: {
                     ...state.dPad,
-                    x: state.dPad.x - screenWidth/24,
+                    x: state.dPad.x - screenWidth/36,
                 },
                 sprite: {
                     ...state.sprite,
-                    x: state.sprite.x - screenWidth/24
+                    x: state.sprite.x - screenWidth/36
                 },
                 home: {
                     ...state.home,
-                    x: state.home.x + screenWidth/24
+                    x: state.home.x + screenWidth/36
                     
                 }
             }
@@ -144,7 +144,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 sprite: {
                     ...state.sprite,
-                    x: state.sprite.x - screenWidth/24,
+                    x: state.sprite.x - screenWidth/36,
                 }
             }
         }
@@ -155,15 +155,15 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 dPad: {
                     ...state.dPad,
-                    x: state.dPad.x + screenWidth/24,
+                    x: state.dPad.x + screenWidth/36,
                 },
                 sprite: {
                     ...state.sprite,
-                    x: state.sprite.x + screenWidth/24,
+                    x: state.sprite.x + screenWidth/36,
                 },
                 home: {
                     ...state.home,
-                    x: state.home.x - screenWidth/24,
+                    x: state.home.x - screenWidth/36,
                 }
             }
         }
@@ -172,7 +172,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 sprite: {
                     ...state.sprite,
-                    x: state.sprite.x + screenWidth/24,
+                    x: state.sprite.x + screenWidth/36,
                 }
             }
         }
@@ -182,16 +182,16 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 dPad: {
-                    x: state.dPad.x - screenWidth/24,
-                    y: state.dPad.y + screenHeight/24
+                    x: state.dPad.x - screenWidth/36,
+                    y: state.dPad.y + screenHeight/36
                 },
                 sprite: {
-                    x: state.sprite.x - screenWidth/24,
-                    y: state.sprite.y + screenHeight/24
+                    x: state.sprite.x - screenWidth/36,
+                    y: state.sprite.y + screenHeight/36
                 },
                 home: {
-                    x: state.home.x + screenWidth/24,
-                    y: state.home.y - screenHeight/24
+                    x: state.home.x + screenWidth/36,
+                    y: state.home.y - screenHeight/36
                 }
 
             }
@@ -200,8 +200,8 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 sprite: {
-                    x: state.sprite.x - screenWidth/24,
-                    y: state.sprite.y + screenHeight/24
+                    x: state.sprite.x - screenWidth/36,
+                    y: state.sprite.y + screenHeight/36
                 }
             }
         }
@@ -212,15 +212,15 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 dPad: {
                     ...state.dPad,
-                    y: state.dPad.y + screenHeight/24
+                    y: state.dPad.y + screenHeight/36
                 },
                 sprite: {
                     ...state.sprite,
-                    y: state.sprite.y + screenHeight/24,
+                    y: state.sprite.y + screenHeight/36,
                 },
                 home: {
                     ...state.home,
-                    y: state.home.y - screenHeight/24
+                    y: state.home.y - screenHeight/36
                 }
             }
         }
@@ -229,7 +229,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 sprite: {
                     ...state.sprite,
-                    y: state.sprite.y + screenHeight/24,
+                    y: state.sprite.y + screenHeight/36,
                 }
             }
         }  
@@ -239,16 +239,16 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 dPad: {
-                    x: state.dPad.x + screenWidth/24,
-                    y: state.dPad.y + screenHeight/24
+                    x: state.dPad.x + screenWidth/36,
+                    y: state.dPad.y + screenHeight/36
                 },
                 sprite: {
-                    x: state.sprite.x + screenWidth/24,
-                    y: state.sprite.y + screenHeight/24
+                    x: state.sprite.x + screenWidth/36,
+                    y: state.sprite.y + screenHeight/36
                 },
                 home: {
-                    x: state.home.x - screenWidth/24,
-                    y: state.home.y - screenHeight/24
+                    x: state.home.x - screenWidth/36,
+                    y: state.home.y - screenHeight/36
                 }
             }
         }
@@ -256,8 +256,8 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 sprite: {
-                    x: state.sprite.x + screenWidth/24,
-                    y: state.sprite.y + screenHeight/24
+                    x: state.sprite.x + screenWidth/36,
+                    y: state.sprite.y + screenHeight/36
                     
                 }
             }

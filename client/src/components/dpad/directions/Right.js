@@ -7,6 +7,10 @@ import {border} from './constants/borders'
 
 class Right extends Component {
 
+  componentDidMount = () => {
+    hold = null
+}
+
   rightButton = () => {
     // HOME
 
@@ -32,7 +36,7 @@ class Right extends Component {
 
 
 
-    if (this.props.sprite.x < screenWidth*7/12 && this.props.sprite.x > screenWidth*6/12 && this.props.sprite.y > screenHeight*56/24) {
+    if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.x > screenWidth*20/36 && this.props.sprite.y > screenHeight*85/36) {
       this.props.deactivateWild()
     }
 
@@ -48,7 +52,7 @@ class Right extends Component {
 
     render() {
         return (
-            <TouchableOpacity   style={styles.dPadButtonRight} onPress={() => this.rightButton()}>
+            <TouchableOpacity   style={styles.dPadButtonRight} onPressIn={() => this.hold = setInterval(this.rightButton, 100)}  onPressOut={() => clearInterval(this.hold)}>
               <View><Text style={styles.direction}>RIGHT</Text></View>
             </TouchableOpacity>
         )
