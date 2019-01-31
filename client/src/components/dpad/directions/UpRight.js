@@ -40,6 +40,9 @@ class UpRight extends Component {
     if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.x > screenWidth*20/36 && this.props.sprite.y > screenHeight*56/24) {
       this.props.deactivateWild()
     }
+    if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.y < screenHeight*85/36 && this.props.sprite.y > screenHeight*84/36) {
+      this.props.deactivateWild()
+    }
     if (this.props.wild.isActive) {
       this.props.incrementStepCounter()
     }

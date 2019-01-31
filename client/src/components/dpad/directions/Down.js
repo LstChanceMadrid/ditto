@@ -36,7 +36,7 @@ class Down extends Component {
             
             // }
             
-            if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.y > screenHeight*85/36) {
+            if (this.props.sprite.x < screenWidth*20/36 && this.props.sprite.y > screenHeight*85/36) {
                 this.props.activateWild()
             }
             if (this.props.wild.isActive) {
