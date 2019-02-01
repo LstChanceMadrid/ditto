@@ -37,15 +37,20 @@ class UpRight extends Component {
     if (location.name === 'house') {
         
     }
-    if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.x > screenWidth*20/36 && this.props.sprite.y > screenHeight*56/24) {
-      this.props.deactivateWild()
+
+    if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.y > screenHeight*84/36) {
+      if (this.props.sprite.x > screenWidth*20/36) {
+        this.props.deactivateWild()
+      }
+      if (this.props.sprite.y < screenHeight*85/36) {
+        this.props.deactivateWild()
+      }
     }
-    if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.y < screenHeight*85/36 && this.props.sprite.y > screenHeight*84/36) {
-      this.props.deactivateWild()
-    }
+
     if (this.props.wild.isActive) {
       this.props.incrementStepCounter()
     }
+  
   }
 
   render() {
@@ -87,10 +92,9 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderTopWidth: 5,
-    borderLeftWidth: 5,
+    borderRightWidth: 5,
     borderTopColor: 'deeppink',
-    borderBottomRightRadius: 100,
-    borderTopLeftRadius: 100,
+    borderRightColor: 'deeppink',
     backgroundColor: 'rgba(255, 0, 150, 0.5)'
   }
 })

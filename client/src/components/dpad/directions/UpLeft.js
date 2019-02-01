@@ -90,8 +90,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 5,
     borderLeftWidth: 5,
     borderTopColor: 'deeppink',
-    borderBottomLeftRadius: 100,
-    borderTopRightRadius: 100,
+    borderLeftColor: 'deeppink',
     backgroundColor: 'rgba(255, 0, 150, 0.5)'
   }
 })

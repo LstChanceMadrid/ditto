@@ -82,12 +82,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 50,
     height: 50,
-    borderTopWidth: 15,
-    borderLeftWidth: 15,
-    borderRightWidth: 15,
-    borderTopColor: 'black',
-    borderTopRightRadius: 100,
-    borderTopLeftRadius: 100,
+    borderTopWidth: 5,
+    borderLeftWidth: 5,
+    borderRightWidth: 5,
+    borderTopColor: 'deeppink',
     backgroundColor: 'rgba(255, 0, 150, 0.5)'
   }
 })

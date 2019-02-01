@@ -17,7 +17,7 @@ class Down extends Component {
         if(this.props.location.name === 'home'){
             if (this.props.sprite.x < screenWidth*14/12 && this.props.sprite.x > screenWidth*21/24 && screenHeight*35/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*34/24) {
                 return
-            } else if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*37/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*35/24) {
+            } else if (this.props.sprite.x < screenWidth*14/12 && this.props.sprite.x > screenWidth*21/24 && this.props.sprite.y < screenHeight*37/24 && this.props.sprite.y > screenHeight*35/24) {
                 return
             } else if (this.props.sprite.y < screenHeight*5/12) {
                 this.props.moveSpriteDown()
@@ -84,9 +84,9 @@ let styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderBottomWidth: 5,
+        borderLeftWidth: 5,
+        borderRightWidth: 5,
         borderBottomColor: 'deeppink',
-        borderBottomLeftRadius: 100,
-        borderBottomRightRadius: 100,
         backgroundColor: 'rgba(255, 0, 150, 0.5)'
       },
       direction: {

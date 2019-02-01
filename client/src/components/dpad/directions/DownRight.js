@@ -36,12 +36,14 @@ class DownRight extends Component {
     if (this.props.location.name === 'house') {
       
     }
+
     if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.y < screenHeight*86/36 && this.props.sprite.y > screenHeight*85/36) {
       this.props.activateWild()
     }
     if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.x > screenWidth*20/36 && this.props.sprite.y > screenHeight*56/24) {
       this.props.deactivateWild()
     }
+
     if (this.props.wild.isActive) {
       this.props.incrementStepCounter()
     }
@@ -87,11 +89,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 50,
     height: 50,
-    borderTopWidth: 5,
-    borderLeftWidth: 5,
-    borderTopColor: 'deeppink',
-    borderBottomLeftRadius: 100,
-    borderTopRightRadius: 100,
+    borderBottomWidth: 5,
+    borderRightWidth: 5,
+    borderRightColor: 'deeppink',
+    borderBottomColor: 'deeppink',
     backgroundColor: 'rgba(255, 0, 150, 0.5)'
   }
 })

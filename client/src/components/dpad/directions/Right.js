@@ -90,9 +90,9 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRightWidth: 5,
+    borderTopWidth: 5,
+    borderBottomWidth: 5,
     borderRightColor: 'deeppink',
-    borderTopRightRadius: 100,
-    borderBottomRightRadius: 100,
     backgroundColor: 'rgba(255, 0, 150, 0.5)'
   }
 })

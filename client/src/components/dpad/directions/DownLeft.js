@@ -13,17 +13,18 @@ class DownLeft extends Component {
 
   downLeftButton = () => {
     // HOME
+    const sprite = this.props.sprite
 
     if (this.props.location.name === 'home') {
-      if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*35/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*34/24) {
+      if (screenWidth*14/12 > sprite.x && sprite.x > screenWidth*21/24 && sprite.y < screenHeight*35/24  && sprite.y > screenHeight*34/24) {
         return
-      } else if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*37/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*35/24) {
+      } else if (screenWidth*14/12 > sprite.x && sprite.x > screenWidth*21/24 && screenHeight*37/24 > sprite.y && sprite.y > screenHeight*35/24) {
         return
-      } else if (this.props.sprite.x > screenWidth*2.5 && this.props.sprite.y < screenHeight/2) {
+      } else if (sprite.x > screenWidth*2.5 && sprite.y < screenHeight/2) {
         this.props.moveSpriteDownLeft()
       } else if (this.props.home.x < screenWidth && this.props.home.y > -screenHeight) {
         this.props.moveDownLeft()
-      } else if (this.props.sprite.x > border.homeLeftBorder && this.props.sprite.y < border.homeBottomBorder) {
+      } else if (sprite.x > border.homeLeftBorder && sprite.y < border.homeBottomBorder) {
         this.props.moveSpriteDownLeft()
       } else {
         return
@@ -35,12 +36,16 @@ class DownLeft extends Component {
     if (this.props.location.name === 'house') {
         
     }
-    if (this.props.sprite.x < screenWidth*20/36 && this.props.sprite.x > screenWidth*19/36 && this.props.sprite.y > screenHeight*85/36) {
-      this.props.activateWild()
+
+    if (sprite.x < screenWidth*21/36 && sprite.y > screenHeight*85/36) {
+      if (sprite.x > screenWidth*19/36) {
+        this.props.activateWild()
+      }
+      if (sprite.y < screenHeight*86/36) {
+        this.props.activateWild()
+      }
     }
-    if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.y < screenHeight*86/36 && this.props.sprite.y > screenHeight*85/36) {
-      this.props.activateWild()
-    }
+
     if (this.props.wild.isActive) {
       this.props.incrementStepCounter()
     }
@@ -82,11 +87,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 50,
     height: 50,
-    borderTopWidth: 5,
+    borderBottomWidth: 5,
     borderLeftWidth: 5,
-    borderTopColor: 'deeppink',
-    borderBottomRightRadius: 100,
-    borderTopLeftRadius: 100,
+    borderLeftColor: 'deeppink',
+    borderBottomColor: 'deeppink',
     backgroundColor: 'rgba(255, 0, 150, 0.5)'
   },
   direction: {

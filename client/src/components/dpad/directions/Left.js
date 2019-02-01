@@ -97,9 +97,9 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderLeftWidth: 5,
+        borderTopWidth: 5,
+        borderBottomWidth: 5,
         borderLeftColor: 'deeppink',
-        borderTopLeftRadius: 100,
-        borderBottomLeftRadius: 100,
         backgroundColor: 'rgba(255, 0, 150, 0.5)'
       }
 })
