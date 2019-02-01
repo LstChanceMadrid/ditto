@@ -303,6 +303,15 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
+        case actionType.RESET_WILD_STEP_COUNTER: {
+            return {
+                ...state,
+                wild: {
+                    ...state.wild,
+                    stepCounter: 0
+                }
+            }
+        }
 
         case actionType.HOUSE: {
             return {
