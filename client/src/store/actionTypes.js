@@ -30,5 +30,9 @@ export const actionType = {
     
     HOUSE: 'HOUSE',
     HOUSE_RESET_DITTO: 'HOUSE_RESET_DITTO',
-    HOUSE_D_PAD: 'HOUSE_D_PAD'
+    HOUSE_D_PAD: 'HOUSE_D_PAD',
+
+    // BATTLE
+
+    BATTLE: 'BATTLE'
 }

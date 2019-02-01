@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
 
 import React, {Component} from 'react';
 import {Dimensions, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
@@ -43,6 +36,18 @@ class Home extends Component {
         }
       })
     }
+
+    if (this.props.wild.stepCounter > 25) {
+      Navigation.setRoot({
+        root: {
+          component: {
+            id: 'Battle',
+            name: 'Battle'
+          }
+        }
+      })
+    }
+
   }
 
   render() {

@@ -343,6 +343,16 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
+        case actionType.BATTLE: {
+            return {
+                ...state,
+                location: {
+                    ...state.location,
+                    name: 'battle'
+                }
+            }
+        }
+
         default:
             return state
     }
