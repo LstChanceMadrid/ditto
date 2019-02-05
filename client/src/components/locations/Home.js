@@ -70,6 +70,7 @@ class Home extends Component {
           <HomeDownCenter />
           <HomeDownRight />
         </View>
+        <View style={styles.phoneTop}></View>
         <Ditto />
         <DPad />
       </View>
@@ -118,5 +119,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '50%',
     right: 0
+  },
+  phoneTop: {
+    position: 'absolute',
+    backgroundColor: 'white',
+    width: screenWidth*3,
+    height: screenHeight/24
   }
 });

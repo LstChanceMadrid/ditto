@@ -8,7 +8,6 @@ class HomeUpLeft extends Component {
         return <View style={styles.container} width={screenWidth} height={screenHeight}>
         <View style={styles.top}></View>
         <View style={styles.left}></View>
-        <Text>HomeUpLeft</Text>
         </View>
     }
 }
@@ -20,15 +19,15 @@ const styles = StyleSheet.create({
         backgroundColor: 'red'
     },
     top: {
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(25,25,25,1)',
         position: 'absolute',
         top: 0,
         left: 0,
         width: screenWidth,
-        height: screenHeight/12
+        height: screenHeight/12,
     },
     left: {
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(25,25,25,1)',
         position: 'absolute',
         top: 0,
         left: 0,

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'purple'
     },
     right: {
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(25,25,25,1)',
         position: 'absolute',
         top: 0,
         right: 0,

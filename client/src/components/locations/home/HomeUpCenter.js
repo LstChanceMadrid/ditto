@@ -6,7 +6,7 @@ import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
 class HomeUpCenter extends Component {
     render() {
         return <View style={styles.container} width={screenWidth} height={screenHeight}>
-        <Text style={styles.top}>HomeUpCenter</Text>
+        <View style={styles.top}></View>
         </View>
     }
 }
@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
         backgroundColor: 'orange'
     },
     top: {
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(25,25,25,1)',
         position: 'absolute',
         top: 0,
         left: 0,
         width: screenWidth,
-        height: screenHeight/12
+        height: screenHeight/12,
     }
 })

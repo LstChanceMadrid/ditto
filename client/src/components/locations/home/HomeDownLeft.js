@@ -11,7 +11,6 @@ class HomeDownLeft extends Component {
         <View style={styles.grass}>
             <Text>M-Driddy-Mon Grass {this.props.wild.stepCounter}</Text>
         </View>
-        <Text>HomeDownLeft</Text>
         </View>
     }
 }
@@ -29,7 +28,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'pink'
     },
     bottom: {
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(25,25,25,1)',
         position: 'absolute',
         bottom: 0,
         right: 0,
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
         height: screenHeight*3/12
     },
     left: {
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(25,25,25,1)',
         position: 'absolute',
         top: 0,
         left: 0,

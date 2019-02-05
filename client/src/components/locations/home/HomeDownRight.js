@@ -8,7 +8,6 @@ class HomeDownRight extends Component {
         return <View style={styles.container} width={screenWidth} height={screenHeight}>
         <View style={styles.right}></View>
         <View style={styles.bottom}></View>
-        <Text>HomeDownRight</Text>
         </View>
     }
 }
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'deeppink'
     },
     right: {
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(25,25,25,1)',
         position: 'absolute',
         top: 0,
         right: 0,
@@ -28,7 +27,7 @@ const styles = StyleSheet.create({
         height: screenHeight
     },
     bottom: {
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(25,25,25,1)',
         position: 'absolute',
         bottom: 0,
         right: 0,

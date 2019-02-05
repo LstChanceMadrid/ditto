@@ -7,7 +7,6 @@ class HomeDownCenter extends Component {
     render() {
         return <View style={styles.container} width={screenWidth} height={screenHeight}>
         <View style={styles.bottom}></View>
-        <Text>HomeDownCenter</Text>
         </View>
     }
 }
@@ -19,7 +18,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'red'
     },
     bottom: {
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(25,25,25,1)',
         position: 'absolute',
         bottom: 0,
         right: 0,

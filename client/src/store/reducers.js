@@ -1,28 +1,7 @@
 import {combineReducers} from 'redux'
 import {actionType} from './actionTypes'
 import {screenWidth, screenHeight} from '../constants/screenDimensions'
-
-export const initialState = {
-    dPad: {
-        x: screenWidth*3/2,
-        y: screenHeight*21/12
-    },
-    sprite: {
-        x: screenWidth*1.5,
-        y: screenHeight*1.5
-    },
-    location: {
-        name: 'home'
-    },
-    home: {
-        x: 0,
-        y: 0
-    },
-    wild: {
-        isActive: false,
-        stepCounter: 0
-    }
-}
+import {initialState} from './initialState'
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -358,6 +337,39 @@ const rootReducer = (state = initialState, action) => {
                 location: {
                     ...state.location,
                     name: 'battle'
+                }
+            }
+        }
+
+        case actionType.ATTACK_OPTIONS: {
+            return {
+                ...state,
+                battleStatus: {
+                    isAttackOptions: true,
+                    isBagOptions: false,
+                    isPokemonOptions: false
+                }
+            }
+        }
+
+        case actionType.BAG_OPTIONS: {
+            return {
+                ...state,
+                battleStatus: {
+                    isAttackOptions: false,
+                    isBagOptions: true,
+                    isPokemonOptions: false
+                }
+            }
+        }
+
+        case actionType.POKEMON_OPTIONS: {
+            return {
+                ...state,
+                battleStatus: {
+                    isAttackOptions: false,
+                    isBagOptions: false,
+                    isPokemonOptions: true
                 }
             }
         }

@@ -9,7 +9,7 @@ import rootReducer from './src/store/reducers'
 
 import Home from './src/components/locations/Home';
 import House from './src/components/locations/House'
-import Battle from './src//components/interaction/Battle'
+import Battle from './src//components/battle/Battle'
 
 const middleware = [thunk]
 

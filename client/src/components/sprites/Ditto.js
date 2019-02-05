@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Image, StyleSheet, Text, View} from 'react-native'
 import {connect} from 'react-redux'
 import {screenWidth, screenHeight} from '../../constants/screenDimensions'
+import {pokemon} from '../../constants/pokemon'
 
 class Ditto extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class Ditto extends Component {
                     height: screenHeight*4/36
                 }} 
                 source={{uri:
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png"
+                    pokemon.ditto.shiny.front
                 }}
             />    
         )

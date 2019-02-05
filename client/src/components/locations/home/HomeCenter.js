@@ -9,7 +9,6 @@ class HomeCenter extends Component {
             <View style={styles.middle}></View>
             <View style={styles.middleLeft}></View>
             <View style={styles.middleLeftDown}></View>
-            <Text>HomeCenter</Text>
             <View style={styles.nextLevel} width={screenWidth/6} height={screenHeight/12}></View>
         </View>
     }

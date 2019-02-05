@@ -35,5 +35,8 @@ export const actionType = {
 
     // BATTLE
 
-    BATTLE: 'BATTLE'
+    BATTLE: 'BATTLE',
+    ATTACK_OPTIONS: 'ATTACK_OPTIONS',
+    BAG_OPTIONS: 'BAG_OPTIONS',
+    POKEMON_OPTIONS: 'POKEMON_OPTIONS'
 }

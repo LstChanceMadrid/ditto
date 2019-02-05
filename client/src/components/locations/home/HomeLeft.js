@@ -9,7 +9,6 @@ class HomeLeft extends Component {
         <View style={styles.container} width={screenWidth} height={screenHeight}>
             <View style={styles.leftdown}></View>
             <View style={styles.left}></View>
-            <Text>HomeLeft</Text>
             <View style={styles.nextLevel} width={screenWidth/2} height={screenHeight/4}></View>
         </View>
         )
@@ -29,7 +28,7 @@ const styles = StyleSheet.create({
         right: 0
     },
     left: {
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(25,25,25,1)',
         position: 'absolute',
         top: 0,
         left: 0,
