@@ -39,6 +39,7 @@ Navigation.registerComponent(`Battle`, () => (props) => (
     </Provider>
 ), () => Battle);
 
+
 Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
         root: {

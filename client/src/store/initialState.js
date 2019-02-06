@@ -23,6 +23,12 @@ export const initialState = {
         isAttackOptions: false,
         isBagOptions: false,
         isPokemonOptions: false
+    },
+    skills: {
+        attackSkill1: '',
+        attackSkill2: '',
+        attackSkill3: '',
+        attackSkill4: ''
     }
 
 }

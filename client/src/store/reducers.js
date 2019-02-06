@@ -374,6 +374,17 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
+        case actionType.BATTLE_ACTIONS: {
+            return {
+                ...state,
+                battleStatus: {
+                    isAttackOptions: false,
+                    isBagOptions: false,
+                    isPokemonOptions: false
+                }
+            }
+        }
+
         default:
             return state
     }

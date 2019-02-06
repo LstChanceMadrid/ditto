@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import {actionType} from '../../store/actionTypes'
 import {screenHeight, screenWidth } from '../../constants/screenDimensions'
 import {Navigation} from 'react-native-navigation'
-import Attack from './Attack'
-import Bag from './Bag'
-import Pokemon from './Pokemon'
+import AttackOptions from './AttackOptions'
+import BagOptions from './BagOptions'
+import PokemonOptions from './PokemonOptions'
 
 class Enemy extends Component {
 
@@ -26,11 +26,11 @@ class Enemy extends Component {
         return (
             <View style={styles.actionContainer}>
                 <View style={styles.actions}>
-                    <TouchableOpacity style={styles.actions} onPres={() => this.props.attackOptions}>
+                    <TouchableOpacity style={styles.actions} onPress={() => this.props.attackOptions()}>
                         <View><Text>Attack</Text></View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.actions} onPres={() => this.props.bagOptions}>
+                    <TouchableOpacity style={styles.actions} onPress={() => this.props.bagOptions()}>
                         <View><Text>Bag</Text></View>
                     </TouchableOpacity>
                     
@@ -38,7 +38,7 @@ class Enemy extends Component {
                         <View><Text>Run Away</Text></View>
                     </TouchableOpacity>
                     
-                    <TouchableOpacity style={styles.actions} onPres={() => this.props.pokemonOptions}>
+                    <TouchableOpacity style={styles.actions} onPress={() => this.props.pokemonOptions()}>
                         <View><Text>Pokemon</Text></View>
                     </TouchableOpacity>
                 </View>
@@ -47,21 +47,20 @@ class Enemy extends Component {
     }
 
     render() {
-        console.log(this.props.battleStatus)
         if (this.props.battleStatus.isAttackOptions) {
             return (
-                <Attack />
+                <AttackOptions />
             )
         } else if (this.props.battleStatus.isBagOptions) {
             return (
                 <View style={styles.actionContainer}>
-                    <Bag />
+                    <BagOptions />
                 </View>
             )
         } else if (this.props.battleStatus.isPokemonOptions) {
             return (
                 <View style={styles.actionContainer}>
-                    <Pokemon />
+                    <PokemonOptions />
                 </View>
             )
         } else {

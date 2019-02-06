@@ -35,7 +35,6 @@ class DPad extends Component {
       }
 
     render() {
-      console.log(this.props.sprite)
         return (
           <View style={{flex:1, position: 'absolute', top: this.props.dPad.y, left: this.props.dPad.x, width: screenWidth/2, height: screenWidth/2}} >
             <View style={styles.horizontal}>
