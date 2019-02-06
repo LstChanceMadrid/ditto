@@ -5,10 +5,15 @@ import { screenWidth, screenHeight } from '../../constants/screenDimensions'
 import { actionType } from '../../store/actionTypes';
 
  class AttackSkill extends Component {
+
+    attack = () => {
+        
+    }
   render() {
+      
     return (
 
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={() => this.props.attack()}>
             <Text>Attack Skill</Text>
             <Text>Type</Text>
             <Text># of moves</Text>
@@ -25,9 +30,9 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
-      
+      attack: () => dispatch({type: actionType.ATTACK})
     }
 }
 

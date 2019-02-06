@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import {Image, StyleSheet, Text, View} from 'react-native'
 import { connect } from 'react-redux'
 import {screenHeight, screenWidth } from '../../constants/screenDimensions'
-import {pokemon} from '../../constants/pokemon'
+import {pokemonSprite} from '../../constants/pokemonSprites'
 
 
 class Player extends Component {
     render() {
         return (
             <View style={styles.playerContainer}>
-                    <Image style={{position: 'absolute', top: 0, left: 0}}width={screenWidth*21/36} height={screenHeight*15/36} source={{uri: pokemon.ditto.shiny.back}} />
+                    <Image style={{position: 'absolute', top: 0, left: 0}}width={screenWidth*21/36} height={screenHeight*15/36} source={{uri: pokemonSprite.ditto.male.shiny.back}} />
 
                     <View style={styles.playerInfo}>
                     <Text>Player name</Text>

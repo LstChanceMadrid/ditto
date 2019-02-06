@@ -1,4 +1,5 @@
 import {screenWidth, screenHeight} from '../constants/screenDimensions'
+
 export const initialState = {
     dPad: {
         x: screenWidth*3/2,
@@ -29,6 +30,9 @@ export const initialState = {
         attackSkill2: '',
         attackSkill3: '',
         attackSkill4: ''
+    },
+    enemy: {
+        hp: 100
     }
 
 }

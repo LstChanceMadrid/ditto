@@ -385,6 +385,14 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
+        case actionType.ATTACK: {
+            return {
+                ...state,
+                enemy: {
+                    hp: state.enemy.hp - 5
+                }
+            }
+        }
         default:
             return state
     }
