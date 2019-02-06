@@ -2,6 +2,11 @@ import {combineReducers} from 'redux'
 import {actionType} from './actionTypes'
 import {screenWidth, screenHeight} from '../constants/screenDimensions'
 import {initialState} from './initialState'
+import { pokemonSprite } from '../constants/pokemonSprites';
+
+
+
+
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -389,7 +394,27 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 enemy: {
+                    ...state.enemy,
                     hp: state.enemy.hp - 5
+                }
+            }
+        }
+
+        case actionType.ENEMY_SPRITE:{
+            return {
+                ...state,
+                enemy: {
+                    ...state.enemy,
+                    sprite: pokemonSprite.bulbasaur.male.default.front
+                }
+            }
+        }
+
+        case actionType.RESET_ENEMY_HEALTH: {
+            return {
+                ...state,
+                enemy: {
+                    hp: 100
                 }
             }
         }

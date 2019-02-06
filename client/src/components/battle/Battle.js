@@ -12,7 +12,15 @@ import BattleActions from './BattleActions';
 class Battle extends Component {
 
     
+    componentDidMount = () => {
+        if (Math.random().toFixed(2)*100 < 101) {
+            this.props.enemySprite()
+        }
+    }
 
+    componentWillUnmount = () => {
+        this.props.resetEnemyHealth()
+    }
 
 
     render() {
@@ -37,8 +45,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        resetWildStepCounter: () => dispatch({type: actionType.RESET_WILD_STEP_COUNTER}),
-        battle: () => dispatch({type: actionType.BATTLE})
+        enemySprite: () => dispatch({type: actionType.ENEMY_SPRITE}),
+        resetEnemyHealth: () => dispatch({type: actionType.RESET_ENEMY_HEALTH})
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Battle)

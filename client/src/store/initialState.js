@@ -1,5 +1,6 @@
 import {screenWidth, screenHeight} from '../constants/screenDimensions'
 
+
 export const initialState = {
     dPad: {
         x: screenWidth*3/2,

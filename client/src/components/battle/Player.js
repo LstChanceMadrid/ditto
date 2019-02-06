@@ -3,10 +3,13 @@ import {Image, StyleSheet, Text, View} from 'react-native'
 import { connect } from 'react-redux'
 import {screenHeight, screenWidth } from '../../constants/screenDimensions'
 import {pokemonSprite} from '../../constants/pokemonSprites'
+import { actionType } from '../../store/actionTypes';
 
 
 class Player extends Component {
+
     render() {
+        console.log(Math.random().toFixed(2)*100)
         return (
             <View style={styles.playerContainer}>
                     <Image style={{position: 'absolute', top: 0, left: 0}}width={screenWidth*21/36} height={screenHeight*15/36} source={{uri: pokemonSprite.ditto.male.shiny.back}} />
@@ -18,7 +21,7 @@ class Player extends Component {
                         <View style={styles.greenHealth}></View>
                         
                     </View>
-                    <Text style={styles.healthNumber}>Health: 555/555</Text>
+                    <Text style={styles.healthNumber}>Health: 100/100</Text>
                     <Text>Lvl: 999</Text>
                     </View>
                 </View>
@@ -26,14 +29,18 @@ class Player extends Component {
     }
 }
 const mapStateToProps = state => {
-
+    return {
+        ...state
+    }
 }
 
 const mapDispatchToProps = dispatch => {
-
+    return {
+        
+    }
 }
 
-export default connect()(Player)
+export default connect(mapStateToProps)(Player)
 
 const styles = StyleSheet.create({
     playerContainer: {

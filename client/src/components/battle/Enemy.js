@@ -15,13 +15,13 @@ class Enemy extends Component {
                     <Text>enemy name</Text>
                     <View style={styles.healthBar}>
                     
-                        <View style={styles.greenHealth} width={this.props.enemy.hp}></View>
+                        <View style={styles.greenHealth} width={this.props.enemy.hp + "%"}></View>
                         
                     </View>
-                    <Text style={styles.healthNumber}>Health: 555/555</Text>
+                    <Text style={styles.healthNumber}>Health: {this.props.enemy.hp}/100</Text>
                     <Text>Lvl: 2</Text>
                 </View>
-                <Image style={{position: 'absolute',top: 0, right: screenWidth*1/36}} width={screenWidth*18/36} height={screenHeight*12/36} source={{uri: pokemonSprite.bulbasaur.male.default.front}} />
+                <Image style={{position: 'absolute',top: 0, right: screenWidth*1/36}} width={screenWidth*18/36} height={screenHeight*12/36} source={{uri: this.props.enemy.sprite}} />
             </View>
         )
     }
