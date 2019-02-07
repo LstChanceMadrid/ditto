@@ -4,11 +4,11 @@ import {screenWidth, screenHeight} from '../constants/screenDimensions'
 export const initialState = {
     dPad: {
         x: screenWidth*3/2,
-        y: screenHeight*21/12
+        y: screenHeight*40/24
     },
     sprite: {
-        x: screenWidth*1.5,
-        y: screenHeight*1.5
+        x: screenWidth*36/24,
+        y: screenHeight*32/24
     },
     location: {
         name: 'home'
@@ -19,7 +19,7 @@ export const initialState = {
     },
     wild: {
         isActive: false,
-        stepCounter: 29
+        stepCounter: 0
     },
     battleStatus: {
         isAttackOptions: false,

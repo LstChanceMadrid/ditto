@@ -22,7 +22,7 @@ class DownRight extends Component {
       }
       else if (this.props.sprite.x < screenWidth/2 && this.props.sprite.y < screenHeight/2) {
         this.props.moveSpriteDownRight()
-      } else if (this.props.home.x > -screenWidth && this.props.home.y > -screenHeight) {
+      } else if (this.props.home.x > -screenWidth && this.props.home.y > -screenHeight*13/12) {
         this.props.moveDownRight()
       } else if (this.props.sprite.x < border.homeRightBorder && this.props.sprite.y < border.homeBottomBorder) {
         this.props.moveSpriteDownRight()

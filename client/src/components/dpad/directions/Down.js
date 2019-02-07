@@ -21,7 +21,7 @@ class Down extends Component {
                 return
             } else if (this.props.sprite.y < screenHeight*5/12) {
                 this.props.moveSpriteDown()
-            } else if (this.props.home.y > -screenHeight) {
+            } else if (this.props.home.y > -screenHeight*13/12) {
             this.props.moveDown()
             } else if (this.props.sprite.y < border.homeBottomBorder) {
                 this.props.moveSpriteDown()

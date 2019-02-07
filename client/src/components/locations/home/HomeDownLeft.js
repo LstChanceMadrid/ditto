@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import {Image, StyleSheet, Text, View} from 'react-native'
 import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
 import { connect } from 'react-redux'
+import {backgroundSprite} from '../../../constants/backgroundSprites'
 
 class HomeDownLeft extends Component {
     render() {
-        return <View style={styles.container} width={screenWidth} height={screenHeight}>
+        return <View style={styles.container}>
+        <Image style={{position: 'absolute', flex: 1, left: screenWidth*3/36, bottom: screenHeight*9/36, zIndex: 100}} width={screenWidth*19/36} height={screenHeight*12/36} resizeMode={'repeat'} source={{uri: backgroundSprite.wildGrassHome}} />
         <View style={styles.bottom}></View>
         <View style={styles.left}></View>
         <View style={styles.grass}>
@@ -25,7 +27,9 @@ export default connect(mapStateToProps)(HomeDownLeft)
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'pink'
+        backgroundColor: 'pink',
+        width: screenWidth,
+        height: screenHeight
     },
     bottom: {
         backgroundColor: 'rgba(25,25,25,1)',
@@ -44,7 +48,6 @@ const styles = StyleSheet.create({
         height: screenHeight
     },
     grass: {
-        backgroundColor: 'green',
         position: 'absolute',
         left: screenWidth*3/36,
         bottom: screenHeight*9/36,

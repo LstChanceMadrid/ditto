@@ -12,9 +12,11 @@ import BattleActions from './BattleActions';
 class Battle extends Component {
 
     
-    componentDidMount = () => {
-        if (Math.random().toFixed(2)*100 < 101) {
-            this.props.enemySprite()
+    componentWillMount = () => {
+        if (Math.random().toFixed(2)*100 <= 50) {
+            this.props.enemyBulbasaur()
+        } else {
+            this.props.enemyDitto()
         }
     }
 
@@ -45,7 +47,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        enemySprite: () => dispatch({type: actionType.ENEMY_SPRITE}),
+        enemyBulbasaur: () => dispatch({type: actionType.ENEMY_BULBASAUR}),
+        enemyDitto: () => dispatch({type: actionType.ENEMY_DITTO}),
         resetEnemyHealth: () => dispatch({type: actionType.RESET_ENEMY_HEALTH})
     }
 }

@@ -274,7 +274,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 wild: {
                     ...state.wild,
-                    stepCounter: state.wild.stepCounter + 1
+                    stepCounter: state.wild.stepCounter + 5
                 }
             }
         }
@@ -400,12 +400,22 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-        case actionType.ENEMY_SPRITE:{
+        case actionType.ENEMY_BULBASAUR:{
             return {
                 ...state,
                 enemy: {
                     ...state.enemy,
                     sprite: pokemonSprite.bulbasaur.male.default.front
+                }
+            }
+        }
+
+        case actionType.ENEMY_DITTO:{
+            return {
+                ...state,
+                enemy: {
+                    ...state.enemy,
+                    sprite: pokemonSprite.ditto.male.shiny.front
                 }
             }
         }

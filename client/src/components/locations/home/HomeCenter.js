@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import {Image, StyleSheet, Text, View} from 'react-native'
 import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
+import {buildingSprite} from '../../../constants/buildingSprites'
 
 
 class HomeCenter extends Component {
     render() {
         return <View style={styles.container} width={screenWidth} height={screenHeight}>
+        <Image style={{position: 'absolute', top: screenWidth/12, left: screenHeight/12}} width={screenWidth/3} height={screenHeight/7} source={{uri: buildingSprite.pokecenter}}/>
             <View style={styles.middle}></View>
             <View style={styles.middleLeft}></View>
             <View style={styles.middleLeftDown}></View>

@@ -22,7 +22,7 @@ class DownLeft extends Component {
         return
       } else if (sprite.x > screenWidth*2.5 && sprite.y < screenHeight/2) {
         this.props.moveSpriteDownLeft()
-      } else if (this.props.home.x < screenWidth && this.props.home.y > -screenHeight) {
+      } else if (this.props.home.x < screenWidth && this.props.home.y > -screenHeight*13/12) {
         this.props.moveDownLeft()
       } else if (sprite.x > border.homeLeftBorder && sprite.y < border.homeBottomBorder) {
         this.props.moveSpriteDownLeft()
