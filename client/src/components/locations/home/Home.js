@@ -4,21 +4,20 @@ import {Dimensions, Platform, StyleSheet, Text, TouchableOpacity, View} from 're
 import {Navigation} from 'react-native-navigation'
 import {connect} from 'react-redux'
 
+import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
 
-import {screenHeight, screenWidth} from '../../constants/screenDimensions'
-
-import Ditto from '../sprites/Ditto'
-import DPad from '../dpad/DPad'
-import HomeUpLeft from './home/HomeUpLeft';
-import HomeUpCenter from './home/HomeUpCenter';
-import HomeUpRight from './home/HomeUpRight';
-import HomeLeft from './home/HomeLeft';
-import HomeCenter from './home/HomeCenter';
-import HomeRight from './home/HomeRight';
-import HomeDownLeft from './home/HomeDownLeft';
-import HomeDownCenter from './home/HomeDownCenter';
-import HomeDownRight from './home/HomeDownRight';
-import { actionType } from '../../store/actionTypes';
+import Ditto from '../../sprites/Ditto'
+import DPad from '../../dpad/DPad'
+import HomeUpLeft from './HomeUpLeft';
+import HomeUpCenter from './HomeUpCenter';
+import HomeUpRight from './HomeUpRight';
+import HomeLeft from './HomeLeft';
+import HomeCenter from './HomeCenter';
+import HomeRight from './HomeRight';
+import HomeDownLeft from './HomeDownLeft';
+import HomeDownCenter from './HomeDownCenter';
+import HomeDownRight from './HomeDownRight';
+import { actionType } from '../../../store/actionTypes';
 
 
 class Home extends Component {

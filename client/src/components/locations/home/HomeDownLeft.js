@@ -7,7 +7,6 @@ import {backgroundSprite} from '../../../constants/backgroundSprites'
 class HomeDownLeft extends Component {
     render() {
         return <View style={styles.container}>
-        <Image style={{position: 'absolute', flex: 1, left: screenWidth*3/36, bottom: screenHeight*9/36, zIndex: 100}} width={screenWidth*19/36} height={screenHeight*12/36} resizeMode={'repeat'} source={{uri: backgroundSprite.wildGrassHome}} />
         <View style={styles.bottom}></View>
         <View style={styles.left}></View>
         <View style={styles.grass}>
@@ -49,6 +48,7 @@ const styles = StyleSheet.create({
     },
     grass: {
         position: 'absolute',
+        backgroundColor: 'green',
         left: screenWidth*3/36,
         bottom: screenHeight*9/36,
         width: screenWidth*19/36,

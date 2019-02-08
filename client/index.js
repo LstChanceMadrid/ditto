@@ -7,7 +7,7 @@ import thunk from 'redux-thunk'
 
 import rootReducer from './src/store/reducers'
 
-import Home from './src/components/locations/Home';
+import Home from './src/components/locations/home/Home';
 import House from './src/components/locations/House'
 import Battle from './src//components/battle/Battle'
 
