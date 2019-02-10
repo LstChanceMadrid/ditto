@@ -3,16 +3,20 @@ import {Image, StyleSheet, Text, View} from 'react-native'
 import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
 import {buildingSprite} from '../../../constants/buildingSprites'
 import {color} from '../../../constants/background/color'
-import Interior from '../../../constants/background/paths/tile/Interior';
-import BorderTop from '../../../constants/background/paths/tile/BorderTop';
-import CornerInternalTopLeft from '../../../constants/background/paths/tile/CornerInternalTopLeft';
-import CornerExternalTopLeft from '../../../constants/background/paths/tile/CornerExternalTopLeft';
-import BorderLeft from '../../../constants/background/paths/tile/BorderLeft'
-import BorderRight from '../../../constants/background/paths/tile/BorderRight';
-import CornerExternalTopRight from '../../../constants/background/paths/tile/CornerExternalTopRight';
-import BorderBottom from '../../../constants/background/paths/tile/BorderBottom';
-import CornerExternalBottomLeft from '../../../constants/background/paths/tile/CornerExternalBottomLeft';
-import CornerExternalBottomRight from '../../../constants/background/paths/tile/CornerExternalBottomRight';
+import Interior from '../../../constants/background/infrastructure/tile/Interior';
+import BorderTop from '../../../constants/background/infrastructure/tile/BorderTop';
+import CornerInternalTopLeft from '../../../constants/background/infrastructure/tile/CornerInternalTopLeft';
+import CornerExternalTopLeft from '../../../constants/background/infrastructure/tile/CornerExternalTopLeft';
+import BorderLeft from '../../../constants/background/infrastructure/tile/BorderLeft'
+import BorderRight from '../../../constants/background/infrastructure/tile/BorderRight';
+import CornerExternalTopRight from '../../../constants/background/infrastructure/tile/CornerExternalTopRight';
+import BorderBottom from '../../../constants/background/infrastructure/tile/BorderBottom';
+import CornerExternalBottomLeft from '../../../constants/background/infrastructure/tile/CornerExternalBottomLeft';
+import CornerExternalBottomRight from '../../../constants/background/infrastructure/tile/CornerExternalBottomRight';
+import CornerInternalTopRight from '../../../constants/background/infrastructure/tile/CornerInternalTopRight';
+import CornerInternalBottomLeft from '../../../constants/background/infrastructure/tile/CornerInternalBottomLeft';
+import CornerInternalBottomRight from '../../../constants/background/infrastructure/tile/CornerInternalBottomRight';
+import CrossRoad from '../../../constants/background/templates/CrossRoad';
 
 
 class HomeCenter extends Component {
@@ -23,44 +27,12 @@ class HomeCenter extends Component {
             <View style={styles.middle}></View>
             
             <Interior />
-            <View style={styles.hi}>
-            <View style={{flexDirection: 'row'}}>
-                <CornerExternalTopLeft />
-                <BorderTop />
-                <BorderTop />
-                <BorderTop />
-                <BorderTop />
-                <BorderTop />
-                <CornerExternalTopRight />
-            </View>
             
-            <View style={{flexDirection: 'row'}}>
-                <BorderLeft />
-                <Interior />
-                <Interior />
-                <Interior />
-                <Interior />
-                <Interior />
-                <BorderRight />
-            </View>
-
-            <View style={{flexDirection: 'row'}}>
-                <CornerExternalBottomLeft />
-                <BorderBottom />
-                <BorderBottom />
-                <BorderBottom />
-                <BorderBottom />
-                <BorderBottom />
-                <CornerExternalBottomRight />
-            </View>
-
-
-
-            
+            <View style={styles.stoneStreet}>
+                <CrossRoad />
             </View>
             
             <CornerInternalTopLeft />
-            <View style={styles.middleLeft}></View>
             <View style={styles.middleLeftDown}></View>
             <View style={styles.nextLevel} width={screenWidth/6} height={screenHeight/12}></View>
         </View>
@@ -102,9 +74,9 @@ const styles = StyleSheet.create({
         width: screenWidth*2/6,
         height: screenHeight/12
     },
-    hi: {
+    stoneStreet: {
         position: 'absolute',
-        left: screenWidth*16/36,
-        top: screenHeight*13/36
+        left: screenWidth*8/36,
+        top: screenHeight*16/36
     }
 })

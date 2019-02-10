@@ -7,17 +7,17 @@ export default class BorderLeft extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.outside}></View>
+        <View style={styles.outside} />
         
         <View style={styles.border}>
-            <View style={styles.borderTile}></View>
-            <View style={styles.borderTile}></View>
+            <View style={styles.borderTile} />
+            <View style={styles.borderTile} />
         </View>
 
         <View style={styles.inside}>
-            <View style={styles.top}></View>
-            <View style={styles.center}></View>
-            <View style={styles.bottom}></View>
+            <View style={styles.top} />
+            <View style={styles.center} />
+            <View style={styles.bottom} />
         </View>
       </View>
     )
