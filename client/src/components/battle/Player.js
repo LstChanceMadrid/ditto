@@ -9,7 +9,6 @@ import { actionType } from '../../store/actionTypes';
 class Player extends Component {
 
     render() {
-        console.log(Math.random().toFixed(2)*100)
         return (
             <View style={styles.playerContainer}>
                     <Image style={{position: 'absolute', top: 0, left: 0}}width={screenWidth*21/36} resizeMode={'contain'} height={screenHeight*15/36} source={{uri: pokemonSprite.ditto.male.shiny.back}} />

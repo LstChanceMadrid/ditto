@@ -9,29 +9,31 @@ class Enemy extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            hP: 0
+            hP: this.props.enemy.hp
         }
     }
     componentDidMount = () => {
+        const healthPoints = this.props.enemy.hP + this.props.enemy.lvl
         this.setState({
-            hP: this.props.enemy.hP
+            hP: this.props.enemy.hP + this.props.enemy.lvl
         })
     }
 
 
 
     render() {
-
+        const healthPoints = this.props.enemy.hP + this.props.enemy.lvl
+        
         return (
             <View style={styles.enemyContainer}>
                 <View style={styles.enemyInfo}>
                     <Text>enemy name</Text>
                     <View style={styles.healthBar}>
                     
-                        <View style={styles.greenHealth} width={this.props.enemy.hP/this.state.hP*100 + "%"}></View>
+                        <View style={styles.greenHealth} width={healthPoints/this.state.hP*100 + "%"}></View>
                         
                     </View>
-                    <Text style={styles.healthNumber}>Health: {this.props.enemy.hP}/{this.state.hP}</Text>
+                    <Text style={styles.healthNumber}>Health: {healthPoints}/{this.state.hP}</Text>
                     <Text>Lvl: {this.props.enemy.lvl}</Text>
                 </View>
                 <Image style={{position: 'absolute',top: 0, right: screenWidth*1/36}} width={screenWidth*18/36} height={screenHeight*12/36} resizeMode={'contain'} source={{uri: this.props.enemy.sprite}} />

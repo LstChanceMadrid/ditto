@@ -13,29 +13,32 @@ import {level} from '../../store/actionTypes/levels'
 class Battle extends Component {
 
     
-    componentWillMount = () => {
-        const enemyPokemonRNG = Math.random().toFixed(2)*100
-        const enemyLevelRNG = Math.random().toFixed(2)*10
-
+    componentDidMount = () => {
+        const enemyRNG = this.props.enemy.rNG
+        // const enemyRNG = Math.random().toFixed(2)*10
+        console.log(enemyRNG)
+        console.log('hi')
         if (this.props.location.name === 'Home') {
-            if (enemyPokemonRNG <= 50) {
+            if (enemyRNG <= 5) {
+                this.props.levelFive()
+                this.props.enemyBulbasaur()
+            } else if (enemyRNG <= 10) {
+                this.props.levelFive()
+                this.props.enemyDitto()
+            } else if (enemyRNG <= 40) {
+                this.props.levelFour()
+                this.props.enemyBulbasaur()
+            } else if (enemyRNG <= 70) {
+                this.props.levelFour()
+                this.props.enemyDitto()
+            } else if (enemyRNG <= 85) {
+                this.props.levelThree()
                 this.props.enemyBulbasaur()
             } else {
+                this.props.levelThree()
                 this.props.enemyDitto()
             }
-
-            if (enemyLevelRNG <= 2) {
-                this.props.levelFive()
-            } else if (enemyLevelRNG <= 6) {
-                this.props.levelFour()
-            } else {
-                this.props.levelThree()
-            }
         }
-    }
-
-    componentWillReceiveProps = () => {
-        
     }
 
     componentWillUnmount = () => {
@@ -46,7 +49,7 @@ class Battle extends Component {
 
 
     render() {
-        if (this.props.enemy.hP < 1) {
+        if (this.props.enemy.hP + this.props.enemy.lvl < 1) {
             
             Navigation.setRoot({
                 root: {

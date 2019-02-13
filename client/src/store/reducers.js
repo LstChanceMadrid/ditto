@@ -284,7 +284,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 wild: {
                     ...state.wild,
-                    stepCounter: state.wild.stepCounter + 1
+                    stepCounter: state.wild.stepCounter - 1
                 }
             }
         }
@@ -432,7 +432,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 enemy: {
                     ...state.enemy,
-                    hP: 5,
+                    hP: statistics.bulbasaur.hP,
                     sprite: pokemonSprite.bulbasaur.male.default.front,
                     name: 'bulbasaur'
                 }
@@ -444,18 +444,28 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 enemy: {
                     ...state.enemy,
+                    hP: statistics.ditto.hP,
                     sprite: pokemonSprite.ditto.male.shiny.front,
                     name: 'ditto'
                 }
             }
         }
 
+        case actionType.ENEMY_RNG: {
+            return {
+                ...state,
+                enemy: {
+                    ...state.enemy,
+                    rNG: Math.random().toFixed(2)*100
+                }
+            }
+        }
         case actionType.RESET_ENEMY_HEALTH: {
             return {
                 ...state,
                 enemy: {
                     ...state.enemy,
-                    hP: 1
+                    // hP: 1
                 }
             }
         }

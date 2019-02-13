@@ -22,6 +22,10 @@ import { actionType } from '../../../store/actionTypes';
 
 class Home extends Component {
 
+  componentDidMount = () => {
+    this.props.enemyRNG()
+  }
+
   componentWillReceiveProps = () => {
     
 
@@ -37,6 +41,7 @@ class Home extends Component {
     }
 
     if (this.props.wild.stepCounter > 25) {
+      
       Navigation.setRoot({
         root: {
           component: {
@@ -46,8 +51,9 @@ class Home extends Component {
         }
       })
     }
-
   }
+
+  
 
   render() {
 
@@ -88,6 +94,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    enemyRNG: () => dispatch({type: actionType.ENEMY_RNG}),
     resetDitto: () => dispatch({type: actionType.RESET_DITTO}),
     activateWild: () => dispatch({type: actionType.ACTIVATE_WILD})
   }
