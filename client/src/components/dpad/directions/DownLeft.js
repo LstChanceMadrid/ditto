@@ -15,7 +15,7 @@ class DownLeft extends Component {
     // HOME
     const sprite = this.props.sprite
 
-    if (this.props.location.name === 'home') {
+    if (this.props.location.name === 'Home') {
       if (screenWidth*14/12 > sprite.x && sprite.x > screenWidth*21/24 && sprite.y < screenHeight*35/24  && sprite.y > screenHeight*34/24) {
         return
       } else if (screenWidth*14/12 > sprite.x && sprite.x > screenWidth*21/24 && screenHeight*37/24 > sprite.y && sprite.y > screenHeight*35/24) {
@@ -33,7 +33,7 @@ class DownLeft extends Component {
 
     // HOUSE
 
-    if (this.props.location.name === 'house') {
+    if (this.props.location.name === 'House') {
         
     }
 

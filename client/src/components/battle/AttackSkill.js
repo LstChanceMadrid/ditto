@@ -6,16 +6,17 @@ import { actionType } from '../../store/actionTypes';
 
  class AttackSkill extends Component {
 
-    attack = () => {
-        
-    }
+
   render() {
+      if (this.props.skills.attackSkill1.name === 'transfrm' || 'transform') {
+        type = 'normal'
+      }
       
     return (
 
-        <TouchableOpacity style={styles.container} onPress={() => this.props.attack()}>
-            <Text>Attack Skill</Text>
-            <Text>Type</Text>
+        <TouchableOpacity style={styles.container} onPress={() => this.props.choose()}>
+            <Text>{this.props.skills.attackSkill1.name}</Text>
+            <Text>{type}</Text>
             <Text># of moves</Text>
         </TouchableOpacity>
 
@@ -32,7 +33,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      attack: () => dispatch({type: actionType.ATTACK})
+      choose: () => dispatch({type: actionType.CHOOSE})
     }
 }
 

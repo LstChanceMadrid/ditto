@@ -5,15 +5,24 @@ import { screenWidth, screenHeight } from '../../constants/screenDimensions'
 import { actionType } from '../../store/actionTypes';
 import Back from './Back'
 import AttackSkill from './AttackSkill';
+import ConfirmAttack from './ConfirmAttack';
 
  class AttackOptions extends Component {
+
+  confirm = () => {
+    if (this.props.attack.isChosen) {
+      return <ConfirmAttack />
+    } else {
+      return <Text>Choose Attack</Text>
+    }
+  }
 
   render() {
     return (
       <View style={styles.container}>
         <Back />
-
-        <Text>Choose Attack</Text>
+        {this.confirm()}
+        
         <View style={styles.skillsContainer}>
           <View style={styles.row}>
           <AttackSkill />

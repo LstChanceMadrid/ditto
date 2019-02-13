@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {Dimensions, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import { connect } from 'react-redux'
 
-import {screenWidth, screenHeight} from '../../constants/screenDimensions'
+import {screenWidth, screenHeight} from '../../../constants/screenDimensions'
 
-import Ditto from '../sprites/Ditto'
-import { actionType } from '../../store/actionTypes';
-import DPad from '../dpad/DPad';
+import Ditto from '../../sprites/Ditto'
+import { actionType } from '../../../store/actionTypes';
+import DPad from '../../dpad/DPad';
 
 class House extends Component {
 

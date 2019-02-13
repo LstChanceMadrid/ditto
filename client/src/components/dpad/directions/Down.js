@@ -14,7 +14,7 @@ class Down extends Component {
     downButton = () => {
         // HOME
         
-        if(this.props.location.name === 'home'){
+        if(this.props.location.name === 'Home'){
             if (this.props.sprite.x < screenWidth*14/12 && this.props.sprite.x > screenWidth*21/24 && screenHeight*35/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*34/24) {
                 return
             } else if (this.props.sprite.x < screenWidth*14/12 && this.props.sprite.x > screenWidth*21/24 && this.props.sprite.y < screenHeight*37/24 && this.props.sprite.y > screenHeight*35/24) {
@@ -32,7 +32,7 @@ class Down extends Component {
 
         // HOUSE
 
-            // if (this.props.location.name === 'house') {
+            // if (this.props.location.name === 'House') {
             
             // }
             

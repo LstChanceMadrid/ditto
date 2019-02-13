@@ -14,7 +14,7 @@ class Up extends Component {
   upButton = () => {
     // HOME
         
-    if(this.props.location.name === 'home'){
+    if(this.props.location.name === 'Home'){
       if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*36/24 > this.props.sprite.y && this.props.sprite.y > screenHeight*34/24) {
         return
       } else if (screenWidth*14/12 > this.props.sprite.x && this.props.sprite.x > screenWidth*21/24 && screenHeight*75/48 > this.props.sprite.y && this.props.sprite.y > screenHeight*73/48) {
@@ -32,7 +32,7 @@ class Up extends Component {
 
   // HOUSE
 
-    if (this.props.location.name === 'house') {
+    if (this.props.location.name === 'House') {
         
     }
     if (this.props.sprite.x < screenWidth*21/36 && this.props.sprite.y < screenHeight*85/36 && this.props.sprite.y > screenHeight*84/36) {

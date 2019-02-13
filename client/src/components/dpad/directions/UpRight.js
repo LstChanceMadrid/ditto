@@ -17,7 +17,7 @@ class UpRight extends Component {
     const home = this.props.home
 
     // HOME
-    if(location.name === 'home'){
+    if(location.name === 'Home'){
       if (screenWidth*14/12 > sprite.x && sprite.x > screenWidth*21/24 && screenHeight*36/24 > sprite.y && sprite.y > screenHeight*34/24) {
           return
       } else if (screenWidth*14/12 > sprite.x && sprite.x > screenWidth*21/24 && screenHeight*75/48 > sprite.y && sprite.y > screenHeight*73/48) {
@@ -34,7 +34,7 @@ class UpRight extends Component {
     }
 
     // HOUSE
-    if (location.name === 'house') {
+    if (location.name === 'House') {
         
     }
 

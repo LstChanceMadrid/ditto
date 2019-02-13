@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { screenWidth, screenHeight } from '../../../constants/screenDimensions'
+import { screenWidth, screenHeight } from '../../screenDimensions'
 import BorderLeft from '../infrastructure/tile/BorderLeft'
 import BorderRight from '../infrastructure/tile/BorderRight'
 import BorderTop from '../infrastructure/tile/BorderTop'
@@ -12,7 +12,7 @@ import CornerInternalTopRight from '../infrastructure/tile/CornerInternalTopRigh
 import CornerInternalBottomLeft from '../infrastructure/tile/CornerInternalBottomLeft'
 import CornerInternalBottomRight from '../infrastructure/tile/CornerInternalBottomRight'
 
-export default class CrossRoad extends Component {
+export default class Crossroad extends Component {
   render() {
     return (
       <View style={styles.container}>

@@ -14,7 +14,7 @@ class Left extends Component {
     leftButton = () => {
       // HOME
         
-      if (this.props.location.name === 'home') {
+      if (this.props.location.name === 'Home') {
         if (this.props.sprite.x > screenWidth*2.5) {
           this.props.moveSpriteLeft()
         } else if (this.props.home.x < screenWidth) {
@@ -28,7 +28,7 @@ class Left extends Component {
 
       // HOUSE
 
-      if (this.props.location.name === 'house') {
+      if (this.props.location.name === 'House') {
         if (this.props.sprite.x > screenWidth/12) {
           this.props.moveSpriteLeft()
         } else {

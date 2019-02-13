@@ -11,7 +11,7 @@ export const initialState = {
         y: screenHeight*32/24
     },
     location: {
-        name: 'home'
+        name: 'Home'
     },
     home: {
         x: 0,
@@ -26,14 +26,33 @@ export const initialState = {
         isBagOptions: false,
         isPokemonOptions: false
     },
+    attack: {
+        isChosen: false,
+        name: 'unknown'
+    },
     skills: {
-        attackSkill1: '',
-        attackSkill2: '',
-        attackSkill3: '',
-        attackSkill4: ''
+        attackSkill1: {
+            name: 'transform'
+        },
+        attackSkill2: {
+            name: ''
+        },
+        attackSkill3: {
+            name: ''
+        },
+        attackSkill4: {
+            name: ''
+        }
     },
     enemy: {
-        hp: 100
+        lvl: 1,
+        hP: 1,
+        attack: 1,
+        defense: 1,
+        sAttack: 1,
+        sDefence: 1,
+        speed: 1
+        
     }
 
 }

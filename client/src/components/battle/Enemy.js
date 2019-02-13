@@ -6,7 +6,20 @@ import {pokemonSprite} from '../../constants/pokemonSprites'
 
 
 class Enemy extends Component {
-    
+    constructor(props) {
+        super(props)
+        this.state = {
+            hP: 0
+        }
+    }
+    componentDidMount = () => {
+        this.setState({
+            hP: this.props.enemy.hP
+        })
+    }
+
+
+
     render() {
 
         return (
@@ -15,13 +28,13 @@ class Enemy extends Component {
                     <Text>enemy name</Text>
                     <View style={styles.healthBar}>
                     
-                        <View style={styles.greenHealth} width={this.props.enemy.hp + "%"}></View>
+                        <View style={styles.greenHealth} width={this.props.enemy.hP/this.state.hP*100 + "%"}></View>
                         
                     </View>
-                    <Text style={styles.healthNumber}>Health: {this.props.enemy.hp}/100</Text>
-                    <Text>Lvl: 2</Text>
+                    <Text style={styles.healthNumber}>Health: {this.props.enemy.hP}/{this.state.hP}</Text>
+                    <Text>Lvl: {this.props.enemy.lvl}</Text>
                 </View>
-                <Image style={{position: 'absolute',top: 0, right: screenWidth*1/36}} width={screenWidth*18/36} height={screenHeight*12/36} source={{uri: this.props.enemy.sprite}} />
+                <Image style={{position: 'absolute',top: 0, right: screenWidth*1/36}} width={screenWidth*18/36} height={screenHeight*12/36} resizeMode={'contain'} source={{uri: this.props.enemy.sprite}} />
             </View>
         )
     }
@@ -43,7 +56,7 @@ const styles = StyleSheet.create({
     enemyContainer: {
         flexDirection: 'row',
         width: screenWidth,
-        height: screenHeight*2/8,
+        height: screenHeight*5/16,
         backgroundColor: 'gray'
     },
     enemyInfo: {

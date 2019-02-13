@@ -8,24 +8,56 @@ import {screenHeight, screenWidth } from '../../constants/screenDimensions'
 import Enemy from './Enemy'
 import Player from './Player'
 import BattleActions from './BattleActions';
+import {level} from '../../store/actionTypes/levels'
 
 class Battle extends Component {
 
     
     componentWillMount = () => {
-        if (Math.random().toFixed(2)*100 <= 50) {
-            this.props.enemyBulbasaur()
-        } else {
-            this.props.enemyDitto()
+        const enemyPokemonRNG = Math.random().toFixed(2)*100
+        const enemyLevelRNG = Math.random().toFixed(2)*10
+
+        if (this.props.location.name === 'Home') {
+            if (enemyPokemonRNG <= 50) {
+                this.props.enemyBulbasaur()
+            } else {
+                this.props.enemyDitto()
+            }
+
+            if (enemyLevelRNG <= 2) {
+                this.props.levelFive()
+            } else if (enemyLevelRNG <= 6) {
+                this.props.levelFour()
+            } else {
+                this.props.levelThree()
+            }
         }
+    }
+
+    componentWillReceiveProps = () => {
+        
     }
 
     componentWillUnmount = () => {
         this.props.resetEnemyHealth()
+        this.props.resetWildStepCounter()
+        this.props.BattleActions()
     }
 
 
     render() {
+        if (this.props.enemy.hP < 1) {
+            
+            Navigation.setRoot({
+                root: {
+                    component: {
+                        id: this.props.location.name,
+                        name: this.props.location.name
+                    }
+                }
+            })
+        }
+        
         return (
             <View style={styles.container}>
                 <Enemy />
@@ -39,14 +71,19 @@ class Battle extends Component {
 const mapStateToProps = state => {
     return {
         ...state,
-        sprite: {
-            ...state.sprite
+        enemy: {
+            ...state.enemy
         }
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
+        levelThree: () => dispatch({type: level.LEVEL_3}),
+        levelFour: () => dispatch({type: level.LEVEL_4}),
+        levelFive: () => dispatch({type: level.LEVEL_5}),
+        BattleActions: () => dispatch({type: actionType.BATTLE_ACTIONS}),
+        resetWildStepCounter: () => dispatch({type: actionType.RESET_WILD_STEP_COUNTER}),
         enemyBulbasaur: () => dispatch({type: actionType.ENEMY_BULBASAUR}),
         enemyDitto: () => dispatch({type: actionType.ENEMY_DITTO}),
         resetEnemyHealth: () => dispatch({type: actionType.RESET_ENEMY_HEALTH})

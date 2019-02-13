@@ -12,7 +12,7 @@ class Player extends Component {
         console.log(Math.random().toFixed(2)*100)
         return (
             <View style={styles.playerContainer}>
-                    <Image style={{position: 'absolute', top: 0, left: 0}}width={screenWidth*21/36} height={screenHeight*15/36} source={{uri: pokemonSprite.ditto.male.shiny.back}} />
+                    <Image style={{position: 'absolute', top: 0, left: 0}}width={screenWidth*21/36} resizeMode={'contain'} height={screenHeight*15/36} source={{uri: pokemonSprite.ditto.male.shiny.back}} />
 
                     <View style={styles.playerInfo}>
                     <Text>Player name</Text>
@@ -45,7 +45,7 @@ export default connect(mapStateToProps)(Player)
 const styles = StyleSheet.create({
     playerContainer: {
         width: screenWidth,
-        height: screenHeight*3/8,
+        height: screenHeight*5/16,
         backgroundColor: 'white'
     },
     playerInfo: {

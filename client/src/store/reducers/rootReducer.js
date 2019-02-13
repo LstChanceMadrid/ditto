@@ -1,10 +1,9 @@
-import {combineReducers} from 'redux'
-import {actionType} from './actionTypes'
-import { level } from './actionTypes/levels'
-import {screenWidth, screenHeight} from '../constants/screenDimensions'
-import {initialState} from './initialState'
-import { pokemonSprite } from '../constants/pokemonSprites';
-import { statistics } from '../constants/pokemon/pokemonStats'
+
+import {actionType} from '../actionTypes'
+import {screenWidth, screenHeight} from '../../constants/screenDimensions'
+import {initialState} from '../initialState'
+import { pokemonSprite } from '../../constants/pokemonSprites';
+
 
 
 
@@ -18,7 +17,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 location: {
-                    name: 'Home'
+                    name: 'home'
                 }
             }
         }
@@ -303,7 +302,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 location: {
                     ...state.location,
-                    name: 'House'
+                    name: 'house'
                 }
             }
         }
@@ -342,7 +341,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 location: {
                     ...state.location,
-                    name: 'Battle'
+                    name: 'battle'
                 }
             }
         }
@@ -354,10 +353,6 @@ const rootReducer = (state = initialState, action) => {
                     isAttackOptions: true,
                     isBagOptions: false,
                     isPokemonOptions: false
-                },
-                attack: {
-                    ...state.attack,
-                    isChosen: false
                 }
             }
         }
@@ -395,44 +390,21 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-        case actionType.CHOOSE: {
-            return {
-                ...state,
-                attack: {
-                    ...state.attack,
-                    isChosen: true,
-                    name: 'transform'
-                }
-            }
-        }
         case actionType.ATTACK: {
             return {
                 ...state,
                 enemy: {
                     ...state.enemy,
-                    hP: state.enemy.hP - 5
-                },
-                attack: {
-                    ...state.attack,
-                    isChosen: false
+                    hp: state.enemy.hp - 5
                 }
             }
         }
-
-
-
-
-
-
-
-
 
         case actionType.ENEMY_BULBASAUR:{
             return {
                 ...state,
                 enemy: {
                     ...state.enemy,
-                    hP: 5,
                     sprite: pokemonSprite.bulbasaur.male.default.front,
                     name: 'bulbasaur'
                 }
@@ -454,65 +426,10 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 enemy: {
-                    ...state.enemy,
-                    hP: 1
+                    hp: 100
                 }
             }
         }
-
-        //  ___       __________  ___        ___  __________  ___
-        // |   |      |   _____|  \  \      /  / |   ______| |   |
-        // |   |      |  |____     \  \    /  /  |  |____    |   |
-        // |   |      |   ____|     \  \  /  /   |   ____|   |   |
-        // |   |____  |  |_____      \  \/  /    |  |______  |   |_____
-        // |________| |________|      \____/     |_________| |_________|
-
-
-        case level.LEVEL_2: {
-            return {
-                ...state,
-                enemy: {
-                    ...state.enemy,
-                    lvl: 2
-                }
-            }
-        }
-
-        case level.LEVEL_3: {
-            return {
-                ...state,
-                enemy: {
-                    ...state.enemy,
-                    lvl: 3
-                }
-            }
-        }
-
-        case level.LEVEL_4: {
-            return {
-                ...state,
-                enemy: {
-                    ...state.enemy,
-                    lvl: 4
-                }
-            }
-        }
-
-        case level.LEVEL_5: {
-            return {
-                ...state,
-                enemy: {
-                    ...state.enemy,
-                    lvl: 5
-                }
-            }
-        }
-
-
-
-
-
-
         default:
             return state
     }
