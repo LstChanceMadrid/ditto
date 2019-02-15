@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
         backgroundColor: color.marble.default
     },
     row3: {
+        backgroundColor: color.marble.light,
         flex: 3,
         flexDirection: 'row'
     },
@@ -91,6 +92,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 5
     },
     row5: {
+        backgroundColor: 'white',
         flex: 5,
         flexDirection: 'row'
     }

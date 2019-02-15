@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import {Dimensions, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import {Navigation} from 'react-native-navigation'
 import {connect} from 'react-redux'
 
@@ -17,13 +17,14 @@ import HomeRight from './HomeRight';
 import HomeDownLeft from './HomeDownLeft';
 import HomeDownCenter from './HomeDownCenter';
 import HomeDownRight from './HomeDownRight';
-import { actionType } from '../../../store/actionTypes';
+import { actionType } from '../../../store/actionTypes/actionTypes';
 
 
 class Home extends Component {
 
   componentDidMount = () => {
     this.props.enemyRNG()
+    
   }
 
   componentWillReceiveProps = () => {
@@ -56,9 +57,9 @@ class Home extends Component {
   
 
   render() {
-
+    console.log(this.props)
     return (
-      <View style={{position: 'absolute', top: -screenHeight, left: -screenWidth, backgroundColor: 'rgba(150, 150, 150, 0.7)', marginTop: this.props.home.y, marginLeft: this.props.home.x}} width={screenWidth*3} height={screenHeight*3}>
+      <View style={{position: 'absolute', top: -screenHeight, left: -screenWidth, backgroundColor: 'rgba(150, 150, 150, 0.7)', marginLeft: this.props.home.x, marginTop: this.props.home.y}} width={screenWidth*3} height={screenHeight*3}>
         
         <View style={styles.horizontal} width={screenWidth*3} height={screenHeight*1}>
           <HomeUpLeft />
@@ -85,10 +86,7 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   return {
-    ...state,
-    sprite: {
-      ...state.sprite
-    }
+    ...state
   }
 }
 

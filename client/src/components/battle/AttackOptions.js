@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
 import { screenWidth, screenHeight } from '../../constants/screenDimensions'
-import { actionType } from '../../store/actionTypes';
+import { actionType } from '../../store/actionTypes/actionTypes';
 import Back from './Back'
 import AttackSkill from './AttackSkill';
 import ConfirmAttack from './ConfirmAttack';

@@ -1,15 +1,15 @@
-import React from 'react'
+import { applyMiddleware, compose, createStore } from 'redux'
 import { Navigation } from "react-native-navigation";
-
-import {Provider} from 'react-redux'
-import { createStore, compose, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import React from 'react'
 import thunk from 'redux-thunk'
 
-import rootReducer from './src/store/reducers'
+import rootReducer from './src/store/reducers/rootReducer'
 
+import Battle from './src/components/battle/Battle'
 import Home from './src/components/locations/home/Home';
 import House from './src/components/locations/house/House'
-import Battle from './src//components/battle/Battle'
+
 
 const middleware = [thunk]
 
@@ -18,6 +18,12 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(...middleware)))
 
 
+
+Navigation.registerComponent(`Battle`, () => (props) => (
+    <Provider store={store}>
+        <Battle {...props}/>
+    </Provider>
+), () => Battle);
 
 
 
@@ -33,11 +39,6 @@ Navigation.registerComponent(`House`, () => (props) => (
     </Provider>
 ), () => House);
 
-Navigation.registerComponent(`Battle`, () => (props) => (
-    <Provider store={store}>
-        <Battle {...props}/>
-    </Provider>
-), () => Battle);
 
 
 Navigation.events().registerAppLaunchedListener(() => {

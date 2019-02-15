@@ -1,23 +1,22 @@
 import React, { Component } from 'react'
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import { StyleSheet, View} from 'react-native'
 import { connect } from 'react-redux'
-import {actionType} from '../../store/actionTypes'
+import {actionType} from '../../store/actionTypes/actionTypes'
 import {Navigation} from 'react-native-navigation'
 import {screenHeight, screenWidth } from '../../constants/screenDimensions'
 
 import Enemy from './Enemy'
 import Player from './Player'
 import BattleActions from './BattleActions';
-import {level} from '../../store/actionTypes/levels'
+import { actionLevel } from '../../store/actionTypes/actionLevels'
+
 
 class Battle extends Component {
 
     
     componentDidMount = () => {
         const enemyRNG = this.props.enemy.rNG
-        // const enemyRNG = Math.random().toFixed(2)*10
-        console.log(enemyRNG)
-        console.log('hi')
+        
         if (this.props.location.name === 'Home') {
             if (enemyRNG <= 5) {
                 this.props.levelFive()
@@ -49,6 +48,7 @@ class Battle extends Component {
 
 
     render() {
+        console.log(this.props)
         if (this.props.enemy.hP + this.props.enemy.lvl < 1) {
             
             Navigation.setRoot({
@@ -73,18 +73,15 @@ class Battle extends Component {
 
 const mapStateToProps = state => {
     return {
-        ...state,
-        enemy: {
-            ...state.enemy
-        }
+        ...state
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        levelThree: () => dispatch({type: level.LEVEL_3}),
-        levelFour: () => dispatch({type: level.LEVEL_4}),
-        levelFive: () => dispatch({type: level.LEVEL_5}),
+        levelThree: () => dispatch({type: actionLevel.LEVEL_3}),
+        levelFour: () => dispatch({type: actionLevel.LEVEL_4}),
+        levelFive: () => dispatch({type: actionLevel.LEVEL_5}),
         BattleActions: () => dispatch({type: actionType.BATTLE_ACTIONS}),
         resetWildStepCounter: () => dispatch({type: actionType.RESET_WILD_STEP_COUNTER}),
         enemyBulbasaur: () => dispatch({type: actionType.ENEMY_BULBASAUR}),

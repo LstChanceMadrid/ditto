@@ -1,15 +1,14 @@
-import {combineReducers} from 'redux'
-import {actionType} from './actionTypes'
-import { level } from './actionTypes/levels'
-import {screenWidth, screenHeight} from '../constants/screenDimensions'
-import {initialState} from './initialState'
-import { pokemonSprite } from '../constants/pokemonSprites';
-import { statistics } from '../constants/pokemon/pokemonStats'
+import { actionLevel } from '../actionTypes/actionLevels'
+import { actionType } from '../actionTypes/actionTypes'
+import { initialState } from '../initialState'
+import { pokemonSprite } from '../../constants/pokemonSprites';
+import { screenHeight, screenWidth } from '../../constants/screenDimensions'
+import { statistics } from '../../constants/pokemon/pokemonStats'
 
 
 
 
-const rootReducer = (state = initialState, action) => {
+const reducers = (state = initialState, action) => {
     switch (action.type) {
 
         // HOME
@@ -460,6 +459,7 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
+        
         case actionType.RESET_ENEMY_HEALTH: {
             return {
                 ...state,
@@ -470,56 +470,6 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-        //  ___       __________  ___        ___  __________  ___
-        // |   |      |   _____|  \  \      /  / |   ______| |   |
-        // |   |      |  |____     \  \    /  /  |  |____    |   |
-        // |   |      |   ____|     \  \  /  /   |   ____|   |   |
-        // |   |____  |  |_____      \  \/  /    |  |______  |   |_____
-        // |________| |________|      \____/     |_________| |_________|
-
-
-        case level.LEVEL_2: {
-            return {
-                ...state,
-                enemy: {
-                    ...state.enemy,
-                    lvl: 2
-                }
-            }
-        }
-
-        case level.LEVEL_3: {
-            return {
-                ...state,
-                enemy: {
-                    ...state.enemy,
-                    lvl: 3
-                }
-            }
-        }
-
-        case level.LEVEL_4: {
-            return {
-                ...state,
-                enemy: {
-                    ...state.enemy,
-                    lvl: 4
-                }
-            }
-        }
-
-        case level.LEVEL_5: {
-            return {
-                ...state,
-                enemy: {
-                    ...state.enemy,
-                    lvl: 5
-                }
-            }
-        }
-
-
-
 
 
 
@@ -528,4 +478,4 @@ const rootReducer = (state = initialState, action) => {
     }
 }
 
-export default rootReducer
+export default reducers

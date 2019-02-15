@@ -1,9 +1,14 @@
 
-import {actionType} from '../actionTypes'
-import {screenWidth, screenHeight} from '../../constants/screenDimensions'
-import {initialState} from '../initialState'
-import { pokemonSprite } from '../../constants/pokemonSprites';
 
+
+import { actionLevel } from '../actionTypes/actionLevels'
+import { actionMovement } from '../actionTypes/actionMovements'
+import { actionType } from '../actionTypes/actionTypes'
+import { initialState } from '../initialState'
+
+import { pokemonSprite } from '../../constants/pokemonSprites';
+import { screenHeight, screenWidth } from '../../constants/screenDimensions'
+import { statistics } from '../../constants/pokemon/pokemonStats'
 
 
 
@@ -17,7 +22,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 location: {
-                    name: 'home'
+                    name: 'Home'
                 }
             }
         }
@@ -283,7 +288,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 wild: {
                     ...state.wild,
-                    stepCounter: state.wild.stepCounter + 1
+                    stepCounter: state.wild.stepCounter - 1
                 }
             }
         }
@@ -302,7 +307,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 location: {
                     ...state.location,
-                    name: 'house'
+                    name: 'House'
                 }
             }
         }
@@ -341,7 +346,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 location: {
                     ...state.location,
-                    name: 'battle'
+                    name: 'Battle'
                 }
             }
         }
@@ -353,6 +358,10 @@ const rootReducer = (state = initialState, action) => {
                     isAttackOptions: true,
                     isBagOptions: false,
                     isPokemonOptions: false
+                },
+                attack: {
+                    ...state.attack,
+                    isChosen: false
                 }
             }
         }
@@ -390,21 +399,44 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
+        case actionType.CHOOSE: {
+            return {
+                ...state,
+                attack: {
+                    ...state.attack,
+                    isChosen: true,
+                    name: 'transform'
+                }
+            }
+        }
         case actionType.ATTACK: {
             return {
                 ...state,
                 enemy: {
                     ...state.enemy,
-                    hp: state.enemy.hp - 5
+                    hP: state.enemy.hP - 5
+                },
+                attack: {
+                    ...state.attack,
+                    isChosen: false
                 }
             }
         }
+
+
+
+
+
+
+
+
 
         case actionType.ENEMY_BULBASAUR:{
             return {
                 ...state,
                 enemy: {
                     ...state.enemy,
+                    hP: statistics.bulbasaur.hP,
                     sprite: pokemonSprite.bulbasaur.male.default.front,
                     name: 'bulbasaur'
                 }
@@ -416,20 +448,95 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 enemy: {
                     ...state.enemy,
+                    hP: statistics.ditto.hP,
                     sprite: pokemonSprite.ditto.male.shiny.front,
                     name: 'ditto'
                 }
             }
         }
 
+        case actionType.ENEMY_RNG: {
+            return {
+                ...state,
+                enemy: {
+                    ...state.enemy,
+                    rNG: Math.random().toFixed(2)*100
+                }
+            }
+        }
+        
         case actionType.RESET_ENEMY_HEALTH: {
             return {
                 ...state,
                 enemy: {
-                    hp: 100
+                    ...state.enemy,
+                    // hP: 1
                 }
             }
         }
+
+
+        //  ___       __________  ___        ___  __________  ___
+        // |   |      |   _____|  \  \      /  / |   ______| |   |
+        // |   |      |  |____     \  \    /  /  |  |____    |   |
+        // |   |      |   ____|     \  \  /  /   |   ____|   |   |
+        // |   |____  |  |_____      \  \/  /    |  |______  |   |_____
+        // |________| |________|      \____/     |_________| |_________|
+
+
+
+        case actionLevel.LEVEL_1: {
+            return {
+                ...state,
+                enemy: {
+                    ...state.enemy,
+                    lvl: 1
+                }
+            }
+        }
+
+        case actionLevel.LEVEL_2: {
+            return {
+                ...state,
+                enemy: {
+                    ...state.enemy,
+                    lvl: 2
+                }
+            }
+        }
+
+        case actionLevel.LEVEL_3: {
+            return {
+                ...state,
+                enemy: {
+                    ...state.enemy,
+                    lvl: 3
+                }
+            }
+        }
+
+        case actionLevel.LEVEL_4: {
+            return {
+                ...state,
+                enemy: {
+                    ...state.enemy,
+                    lvl: 4
+                }
+            }
+        }
+
+        case actionLevel.LEVEL_5: {
+            return {
+                ...state,
+                enemy: {
+                    ...state.enemy,
+                    lvl: 5
+                }
+            }
+        }
+
+
+
         default:
             return state
     }

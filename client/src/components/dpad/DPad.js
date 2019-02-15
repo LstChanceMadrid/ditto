@@ -12,7 +12,7 @@ import Right from './directions/Right'
 import DownLeft from './directions/DownLeft'
 import Down from './directions/Down'
 import DownRight from './directions/DownRight'
-import { actionType } from '../../store/actionTypes';
+import { actionType } from '../../store/actionTypes/actionTypes';
 
 class DPad extends Component {
 
@@ -29,14 +29,13 @@ class DPad extends Component {
             })
           }
         } else {
-          console.log('oops')
           return
         }
       }
 
     render() {
         return (
-          <View style={{flex:1, position: 'absolute', top: this.props.dPad.y, left: this.props.dPad.x, width: screenWidth/2, height: screenHeight/4}} >
+          <View style={{flex:1, position: 'absolute', top: this.props.dPad.y, left: this.props.dPad.x, width: screenWidth/2, height: screenHeight/4}}>
             <View style={styles.horizontal}>
               <UpLeft />
 
@@ -69,10 +68,7 @@ class DPad extends Component {
 
 const mapStateToProps = state => {
     return {
-        ...state,
-        sprite: {
-            ...state.sprite
-        }
+        ...state
     }
 }
 

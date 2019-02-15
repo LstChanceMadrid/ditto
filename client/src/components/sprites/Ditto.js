@@ -32,10 +32,7 @@ class Ditto extends Component {
 
 const mapStateToProps = state => {
     return {
-        ...state,
-        sprite: {
-            ...state.sprite
-        }
+        ...state
     }
 }
 

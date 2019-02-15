@@ -28,7 +28,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PokemonOptions)
+export default connect(mapStateToProps)(PokemonOptions)
 
 const styles = StyleSheet.create({
   container: {
@@ -36,5 +36,5 @@ const styles = StyleSheet.create({
     width: screenWidth,
     height: screenHeight*3/8,
     backgroundColor: 'yellow'
-},
+  }
 })

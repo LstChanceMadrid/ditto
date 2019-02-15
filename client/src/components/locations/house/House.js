@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import {screenWidth, screenHeight} from '../../../constants/screenDimensions'
 
 import Ditto from '../../sprites/Ditto'
-import { actionType } from '../../../store/actionTypes';
+import { actionType } from '../../../store/actionTypes/actionTypes';
 import DPad from '../../dpad/DPad';
 
 class House extends Component {

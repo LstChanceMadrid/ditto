@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 5
     },
     row5: {
+        backgroundColor: 'white',
         flex: 5,
         flexDirection: 'row'
     }

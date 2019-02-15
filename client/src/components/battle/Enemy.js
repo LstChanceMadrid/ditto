@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {Image, StyleSheet, Text, View} from 'react-native'
 import { connect } from 'react-redux'
 import {screenHeight, screenWidth } from '../../constants/screenDimensions'
-import {pokemonSprite} from '../../constants/pokemonSprites'
 
 
 class Enemy extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
-import {actionType} from '../../store/actionTypes'
+import {actionType} from '../../store/actionTypes/actionTypes'
 import {screenHeight, screenWidth } from '../../constants/screenDimensions'
 import {Navigation} from 'react-native-navigation'
 import AttackOptions from './AttackOptions'

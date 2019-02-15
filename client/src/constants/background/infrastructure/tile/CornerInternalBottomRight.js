@@ -6,34 +6,28 @@ import {color} from '../../color'
 export default class CornerInternalBottomRight extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        
-        
+        <View style={styles.container}>
+            <View style={styles.row5}>
+                <View style={styles.borderTop}></View>
+                
+                <View style={styles.outsideTop}>
+                    <View style={styles.row2up}></View>
+                    <View style={styles.row2}></View>
+                </View>
+            </View>
 
-        
-        
-        <View style={styles.row5}>
-        <View style={styles.borderTop}></View>
-            <View style={styles.outsideTop}>
-                <View style={styles.row2up}></View>
-                <View style={styles.row2}></View>
+            <View style={styles.row1}>
+                <View style={styles.flex1Default}></View> 
+                <View style={styles.flex1}></View>
+                <View style={styles.flex1}></View>
+            </View>
+
+            <View style={styles.row3}>
+                <View style={styles.insideTop}></View>
+                <View style={styles.insideCenter}></View>  
+                <View style={styles.insideTop}></View>  
             </View>
         </View>
-
-        <View style={styles.row1}>
-        <View style={styles.flex1Default}></View> 
-            <View style={styles.flex1}></View>
-            <View style={styles.flex1}></View>
-              
-        </View>
-
-        <View style={styles.row3}>
-            <View style={styles.insideTop}></View>
-            <View style={styles.insideCenter}></View>  
-            <View style={styles.insideTop}></View>  
-        </View>
-        <View style={styles.absoluteTop}></View>
-      </View>
     )
   }
 }
@@ -78,6 +72,7 @@ const styles = StyleSheet.create({
         backgroundColor: color.marble.default
     },
     row3: {
+        // backgroundColor: 'white',
         flex: 3,
         flexDirection: 'row'
     },
@@ -87,12 +82,12 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderBottomWidth: 6,
         borderRadius: 2,
-        // borderTopRightRadius: 5,
         marginBottom: 1,
         marginTop: -1,
         borderBottomRightRadius: 5
     },
     row5: {
+        backgroundColor: 'white',
         flex: 5,
         flexDirection: 'row'
     }

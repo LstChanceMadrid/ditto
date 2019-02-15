@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
-import {actionType} from '../../../store/actionTypes'
+import {actionType} from '../../../store/actionTypes/actionTypes'
 import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
 import {border} from './constants/borders'
 
@@ -58,10 +58,7 @@ class Down extends Component {
 
 const mapStateToProps = state => {
     return {
-        ...state,
-        sprite: {
-            ...state.sprite
-        }
+        ...state
     }
 }
 

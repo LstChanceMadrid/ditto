@@ -3,7 +3,7 @@ import {Image, StyleSheet, Text, View} from 'react-native'
 import { connect } from 'react-redux'
 import {screenHeight, screenWidth } from '../../constants/screenDimensions'
 import {pokemonSprite} from '../../constants/pokemonSprites'
-import { actionType } from '../../store/actionTypes';
+import { actionType } from '../../store/actionTypes/actionTypes';
 
 
 class Player extends Component {

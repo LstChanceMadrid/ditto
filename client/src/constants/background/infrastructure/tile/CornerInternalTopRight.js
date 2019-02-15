@@ -36,6 +36,7 @@ export default class CornerInternalTopRight extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        
         width: screenWidth*2/36,
         height: screenHeight*2/36
     },
@@ -88,6 +89,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 5
     },
     row5: {
+        
         flex: 5,
         flexDirection: 'row'
     }
