@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
 import BorderLeft from '../../../constants/background/infrastructure/tile/BorderLeft';
 import Interior from './../../../constants/background/infrastructure/tile/Interior'
@@ -9,7 +9,7 @@ import BorderRight from '../../../constants/background/infrastructure/tile/Borde
 class HomeUpCenter extends Component {
     render() {
         return <View style={styles.container} width={screenWidth} height={screenHeight}>
-        <View style={styles.top}></View>
+        <View style={styles.top} />
         <View style={styles.toRoute1}>
         <View style={styles.row}>
             <Interior />

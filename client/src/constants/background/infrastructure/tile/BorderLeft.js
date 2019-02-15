@@ -11,12 +11,15 @@ export default class BorderLeft extends Component {
         
         <View style={styles.border}>
             <View style={styles.borderTile} />
+
             <View style={styles.borderTile} />
         </View>
 
         <View style={styles.inside}>
             <View style={styles.top} />
+
             <View style={styles.center} />
+            
             <View style={styles.bottom} />
         </View>
       </View>

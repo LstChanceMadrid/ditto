@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import {actionType} from '../../../store/actionTypes/actionTypes'
 import {screenHeight, screenWidth } from '../../../constants/screenDimensions'
 import {border} from './constants/borders'
+import { actionMovement } from '../../../store/actionTypes/actionMovements'
 
 class Right extends Component {
 
@@ -67,8 +68,8 @@ const mapStateToProps = state => {
 
   const mapDispatchToProps = dispatch => {
     return {
-        moveRight: () =>  dispatch({type: actionType.MOVE_RIGHT}),
-        moveSpriteRight: () => dispatch({type: actionType.MOVE_SPRITE_RIGHT}),
+        moveRight: () =>  dispatch({type: actionMovement.MOVE_RIGHT}),
+        moveSpriteRight: () => dispatch({type: actionMovement.MOVE_SPRITE_RIGHT}),
         deactivateWild: () => dispatch({type: actionType.DEACTIVATE_WILD}),
         incrementStepCounter: () => dispatch({type: actionType.INCREMENT_WILD_STEP_COUNTER})
     }

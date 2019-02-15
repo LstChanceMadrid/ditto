@@ -76,7 +76,7 @@ class Home extends Component {
           <HomeDownCenter />
           <HomeDownRight />
         </View>
-        <View style={styles.phoneTop}></View>
+        <View style={styles.phoneTop} />
         <Ditto />
         <DPad />
       </View>

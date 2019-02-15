@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
 
 
 class HomeDownRight extends Component {
     render() {
         return <View style={styles.container} width={screenWidth} height={screenHeight}>
-        <View style={styles.right}></View>
-        <View style={styles.bottom}></View>
+        <View style={styles.right} />
+        <View style={styles.bottom} />
         </View>
     }
 }

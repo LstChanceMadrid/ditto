@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import { connect } from 'react-redux'
 
 import {screenWidth, screenHeight} from '../../../constants/screenDimensions'
@@ -20,7 +20,7 @@ class House extends Component {
         return (
             <View style={styles.container}>
             
-            <View style={styles.newScreen} width={screenWidth*2/12} height={screenHeight/12}></View>
+            <View style={styles.newScreen} width={screenWidth*2/12} height={screenHeight/12} />
                 <Text style={styles.text}>This is a house!</Text>
                 <Ditto />
                 <DPad />

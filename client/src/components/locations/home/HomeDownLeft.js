@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import {Image, StyleSheet, Text, View} from 'react-native'
+import { StyleSheet, Text, View} from 'react-native'
 import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
 import { connect } from 'react-redux'
-import {backgroundSprite} from '../../../constants/backgroundSprites'
 
 class HomeDownLeft extends Component {
     render() {
         return <View style={styles.container}>
-        <View style={styles.bottom}></View>
-        <View style={styles.left}></View>
+        <View style={styles.bottom} />
+        <View style={styles.left} />
         <View style={styles.grass}>
             <Text>M-Driddy-Mon Grass {this.props.wild.stepCounter}</Text>
         </View>

@@ -24,7 +24,6 @@ export default class Crossroad extends Component {
             <Interior />
             <Interior />
             <BorderRight />
-
         </View>
 
         <View style={styles.row}>

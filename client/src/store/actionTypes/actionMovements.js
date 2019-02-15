@@ -1,4 +1,7 @@
-export const actionMovements = {
+export const actionMovement = {
+
+    // HOME ???
+    
     MOVE_UP_LEFT: 'MOVE_UP_LEFT',
     MOVE_SPRITE_UP_LEFT: 'MOVE_SPRITE_UP_LEFT',
     MOVE_UP: 'MOVE_UP',

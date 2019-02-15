@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {Image, StyleSheet, Text, View} from 'react-native'
+import {Image, StyleSheet, View} from 'react-native'
 import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
-import {buildingSprite} from '../../../constants/buildingSprites'
+import {buildingSprite} from '../../../constants/background/buildingSprites'
 import {color} from '../../../constants/background/color'
 import Crossroad from '../../../constants/background/templates/Crossroad';
 
@@ -11,14 +11,14 @@ class HomeCenter extends Component {
 
         return <View style={styles.container} width={screenWidth} height={screenHeight}>
         <Image style={{position: 'absolute', top: screenWidth/12, left: screenHeight/12}} width={screenWidth/3} height={screenHeight/7} source={{uri: buildingSprite.pokecenter}}/>
-            <View style={styles.middle}></View>
+            <View style={styles.middle} />
 
             <View style={styles.crossroad}>
                 <Crossroad />
             </View>
             
-            <View style={styles.middleLeftDown}></View>
-            <View style={styles.nextLevel} width={screenWidth/6} height={screenHeight/12}></View>
+            <View style={styles.middleLeftDown} />
+            <View style={styles.nextLevel} width={screenWidth/6} height={screenHeight/12} />
         </View>
     }
 }

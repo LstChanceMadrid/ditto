@@ -7,19 +7,20 @@ export default class CornerExternalTopRight extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.outsideTop}>
-        
-        </View>
+        <View style={styles.outsideTop} />
 
         <View style={styles.row4}>
-            <View style={styles.borderTop}></View>
-            <View style={styles.outsideRight}></View>
+            <View style={styles.borderTop} />
+        
+            <View style={styles.outsideRight} />
         </View>
 
         <View style={styles.row3}>
-            <View style={styles.inside}></View>
-            <View style={styles.borderRight}></View>
-            <View style={styles.outsideRight}></View>
+            <View style={styles.inside} />
+        
+            <View style={styles.borderRight} />
+        
+            <View style={styles.outsideRight} />
         </View>
       </View>
     )

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Image, StyleSheet, Text, View} from 'react-native'
 import { connect } from 'react-redux'
 import {screenHeight, screenWidth } from '../../constants/screenDimensions'
-import {pokemonSprite} from '../../constants/pokemonSprites'
+import {pokemonSprite} from '../../constants/pokemon/pokemonSprites'
 import { actionType } from '../../store/actionTypes/actionTypes';
 
 
@@ -17,7 +17,7 @@ class Player extends Component {
                     <Text>Player name</Text>
                     <View style={styles.healthBar}>
                     
-                        <View style={styles.greenHealth}></View>
+                        <View style={styles.greenHealth} />
                         
                     </View>
                     <Text style={styles.healthNumber}>Health: 100/100</Text>

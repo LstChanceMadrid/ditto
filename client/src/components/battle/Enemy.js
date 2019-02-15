@@ -29,7 +29,7 @@ class Enemy extends Component {
                     <Text>enemy name</Text>
                     <View style={styles.healthBar}>
                     
-                        <View style={styles.greenHealth} width={healthPoints/this.state.hP*100 + "%"}></View>
+                        <View style={styles.greenHealth} width={healthPoints/this.state.hP*100 + "%"} />
                         
                     </View>
                     <Text style={styles.healthNumber}>Health: {healthPoints}/{this.state.hP}</Text>

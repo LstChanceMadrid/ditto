@@ -1,22 +1,18 @@
 
-
-
 import { actionLevel } from '../actionTypes/actionLevels'
 import { actionMovement } from '../actionTypes/actionMovements'
 import { actionType } from '../actionTypes/actionTypes'
-import { initialState } from '../initialState'
-
-import { pokemonSprite } from '../../constants/pokemonSprites';
+import { initialState } from './initialState'
+import { pokemonSprite } from '../../constants/pokemon/pokemonSprites';
 import { screenHeight, screenWidth } from '../../constants/screenDimensions'
 import { statistics } from '../../constants/pokemon/pokemonStats'
-
 
 
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
 
-        // HOME
+        // Locations
 
         case actionType.HOME: {
             return {
@@ -26,7 +22,20 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
-        case actionType.MOVE_UP_LEFT: {
+
+        case actionType.HOUSE: {
+            return {
+                ...state,
+                location: {
+                    ...state.location,
+                    name: 'House'
+                }
+            }
+        }
+
+        // Movements
+
+        case actionMovement.MOVE_UP_LEFT: {
             return {
                 ...state,
                 dPad: {
@@ -43,7 +52,8 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
-        case actionType.MOVE_SPRITE_UP_LEFT: {
+
+        case actionMovement.MOVE_SPRITE_UP_LEFT: {
             return {
                 ...state,
                 sprite: {
@@ -53,8 +63,7 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-
-        case actionType.MOVE_UP: {
+        case actionMovement.MOVE_UP: {
             return {
                 ...state,
                 dPad: {
@@ -71,7 +80,8 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
-        case actionType.MOVE_SPRITE_UP: {
+
+        case actionMovement.MOVE_SPRITE_UP: {
             return {
                 ...state,
                 sprite: {
@@ -81,8 +91,7 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-
-        case actionType.MOVE_UP_RIGHT: {
+        case actionMovement.MOVE_UP_RIGHT: {
             return {
                 ...state,
                 dPad: {
@@ -99,7 +108,8 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
-        case actionType.MOVE_SPRITE_UP_RIGHT: {
+
+        case actionMovement.MOVE_SPRITE_UP_RIGHT: {
             return {
                 ...state,
                 sprite: {
@@ -109,8 +119,7 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-
-        case actionType.MOVE_LEFT: {
+        case actionMovement.MOVE_LEFT: {
             return {
                 ...state,
                 dPad: {
@@ -124,11 +133,11 @@ const rootReducer = (state = initialState, action) => {
                 home: {
                     ...state.home,
                     x: state.home.x + screenWidth/36
-                    
                 }
             }
         }
-        case actionType.MOVE_SPRITE_LEFT: {
+
+        case actionMovement.MOVE_SPRITE_LEFT: {
             return {
                 ...state,
                 sprite: {
@@ -138,8 +147,7 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-
-        case actionType.MOVE_RIGHT: {
+        case actionMovement.MOVE_RIGHT: {
             return {
                 ...state,
                 dPad: {
@@ -156,7 +164,8 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
-        case actionType.MOVE_SPRITE_RIGHT: {
+
+        case actionMovement.MOVE_SPRITE_RIGHT: {
             return {
                 ...state,
                 sprite: {
@@ -166,8 +175,7 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-
-        case actionType.MOVE_DOWN_LEFT: {
+        case actionMovement.MOVE_DOWN_LEFT: {
             return {
                 ...state,
                 dPad: {
@@ -182,10 +190,10 @@ const rootReducer = (state = initialState, action) => {
                     x: state.home.x + screenWidth/36,
                     y: state.home.y - screenHeight/36
                 }
-
             }
         }
-        case actionType.MOVE_SPRITE_DOWN_LEFT: {
+
+        case actionMovement.MOVE_SPRITE_DOWN_LEFT: {
             return {
                 ...state,
                 sprite: {
@@ -195,8 +203,7 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-
-        case actionType.MOVE_DOWN: {
+        case actionMovement.MOVE_DOWN: {
             return {
                 ...state,
                 dPad: {
@@ -213,7 +220,8 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
-        case actionType.MOVE_SPRITE_DOWN: {
+
+        case actionMovement.MOVE_SPRITE_DOWN: {
             return {
                 ...state,
                 sprite: {
@@ -223,8 +231,7 @@ const rootReducer = (state = initialState, action) => {
             }
         }  
 
-
-        case actionType.MOVE_DOWN_RIGHT: {
+        case actionMovement.MOVE_DOWN_RIGHT: {
             return {
                 ...state,
                 dPad: {
@@ -241,18 +248,18 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
-        case actionType.MOVE_SPRITE_DOWN_RIGHT: {
+
+        case actionMovement.MOVE_SPRITE_DOWN_RIGHT: {
             return {
                 ...state,
                 sprite: {
                     x: state.sprite.x + screenWidth/36,
                     y: state.sprite.y + screenHeight/36
-                    
                 }
             }
         }
 
-
+//////// wild stuff
 
         case actionType.ACTIVATE_WILD: {
             return {
@@ -283,6 +290,7 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
+
         case actionType.DECREMENT_WILD_STEP_COUNTER: {
             return {
                 ...state,
@@ -292,6 +300,7 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
+
         case actionType.RESET_WILD_STEP_COUNTER: {
             return {
                 ...state,
@@ -302,15 +311,8 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-        case actionType.HOUSE: {
-            return {
-                ...state,
-                location: {
-                    ...state.location,
-                    name: 'House'
-                }
-            }
-        }
+        /////////////// HOUSE
+
         case actionType.HOUSE_D_PAD: {
             return {
                 ...state,
@@ -321,7 +323,6 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-
         case actionType.HOUSE_RESET_DITTO: {
             return {
                 ...state,
@@ -331,6 +332,7 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
+
         case actionType.RESET_DITTO: {
             return {
                 ...state,
@@ -341,6 +343,8 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
+        /////////////// Battle
+        
         case actionType.BATTLE: {
             return {
                 ...state,
@@ -409,6 +413,7 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
+
         case actionType.ATTACK: {
             return {
                 ...state,
@@ -423,13 +428,7 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-
-
-
-
-
-
-
+//////////////////////////////////// ENEMY
 
         case actionType.ENEMY_BULBASAUR:{
             return {
@@ -475,15 +474,12 @@ const rootReducer = (state = initialState, action) => {
             }
         }
 
-
         //  ___       __________  ___        ___  __________  ___
         // |   |      |   _____|  \  \      /  / |   ______| |   |
         // |   |      |  |____     \  \    /  /  |  |____    |   |
         // |   |      |   ____|     \  \  /  /   |   ____|   |   |
         // |   |____  |  |_____      \  \/  /    |  |______  |   |_____
         // |________| |________|      \____/     |_________| |_________|
-
-
 
         case actionLevel.LEVEL_1: {
             return {
@@ -534,8 +530,6 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
         }
-
-
 
         default:
             return state

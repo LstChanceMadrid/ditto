@@ -7,27 +7,30 @@ export default class CornerInternalTopLeft extends Component {
   render() {
     return (
       <View style={styles.container}>
-        
         <View style={styles.row3}>
-            <View style={styles.insideTop}></View>
-            <View style={styles.insideCenter}></View>  
-            <View style={styles.insideTop}></View>  
+            <View style={styles.insideTop} />
+        
+            <View style={styles.insideCenter} />  
+        
+            <View style={styles.insideTop} />  
         </View>
+        
         <View style={styles.row1}>
-            <View style={styles.flex1}></View>
-            <View style={styles.flex1}></View>
-            <View style={styles.flex1Default}></View>
+            <View style={styles.flex1} />
+        
+            <View style={styles.flex1} />
+        
+            <View style={styles.flex1Default} />
         </View>
         
-        
-
         <View style={styles.row5}>
             <View style={styles.outsideTop}>
-                <View style={styles.row2up}></View>
-                <View style={styles.row2}></View>
+                <View style={styles.row2up} />
+        
+                <View style={styles.row2} />
             </View>
 
-            <View style={styles.borderTop}></View>
+            <View style={styles.borderTop} />
         </View>
       </View>
     )

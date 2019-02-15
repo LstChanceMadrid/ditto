@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
 
 
@@ -7,9 +7,9 @@ class HomeLeft extends Component {
     render() {
         return (
         <View style={styles.container} width={screenWidth} height={screenHeight}>
-            <View style={styles.leftdown}></View>
-            <View style={styles.left}></View>
-            <View style={styles.nextLevel} width={screenWidth/2} height={screenHeight/4}></View>
+            <View style={styles.leftdown} />
+            <View style={styles.left} />
+            <View style={styles.nextLevel} width={screenWidth/2} height={screenHeight/4} />
         </View>
         )
     }

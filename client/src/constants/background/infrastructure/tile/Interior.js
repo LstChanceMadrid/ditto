@@ -8,19 +8,27 @@ export default class Center extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.row}>
-            <View style={styles.top}></View>
-            <View style={styles.center}></View>
-            <View style={styles.top}></View>
+            <View style={styles.top} />
+          
+            <View style={styles.center} />
+          
+            <View style={styles.top} />
         </View>
+        
         <View style={styles.row}>
-            <View style={styles.center}></View>
-            <View style={styles.center}></View>
-            <View style={styles.center}></View>
+            <View style={styles.center} />
+        
+            <View style={styles.center} />
+        
+            <View style={styles.center} />
         </View>
+        
         <View style={styles.row}>
-            <View style={styles.top}></View>
-            <View style={styles.center}></View>
-            <View style={styles.top}></View>
+            <View style={styles.top} />
+        
+            <View style={styles.center} />
+        
+            <View style={styles.top} />
         </View>
       </View>
     )

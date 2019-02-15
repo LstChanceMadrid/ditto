@@ -1,4 +1,4 @@
-import {screenWidth, screenHeight} from '../constants/screenDimensions'
+import {screenWidth, screenHeight} from '../../constants/screenDimensions'
 
 
 export const initialState = {

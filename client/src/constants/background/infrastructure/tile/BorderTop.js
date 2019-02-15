@@ -7,18 +7,20 @@ export default class BorderTop extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.outside}></View>
+        <View style={styles.outside} />
         
-
         <View style={styles.border}>
-            <View style={styles.borderTile}></View>
-            <View style={styles.borderTile}></View>
+            <View style={styles.borderTile} />
+        
+            <View style={styles.borderTile} />
         </View>
 
         <View style={styles.inside}>
-            <View style={styles.left}></View>
-            <View style={styles.center}></View>
-            <View style={styles.right}></View>
+            <View style={styles.left} />
+        
+            <View style={styles.center} />
+        
+            <View style={styles.right} />
         </View>
       </View>
     )

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Image, StyleSheet, Text, View} from 'react-native'
 import {connect} from 'react-redux'
 import {screenWidth, screenHeight} from '../../constants/screenDimensions'
-import {pokemonSprite} from '../../constants/pokemonSprites'
+import {pokemonSprite} from '../../constants/pokemon/pokemonSprites'
 
 class Ditto extends Component {
     constructor(props) {
