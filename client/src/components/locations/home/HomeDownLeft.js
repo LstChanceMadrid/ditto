@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View} from 'react-native'
 import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
 import { connect } from 'react-redux'
+import ShortGrass from '../../../constants/background/wild/grass/ShortGrass';
 
 class HomeDownLeft extends Component {
     render() {
@@ -10,6 +11,7 @@ class HomeDownLeft extends Component {
         <View style={styles.left} />
         <View style={styles.grass}>
             <Text>M-Driddy-Mon Grass {this.props.wild.stepCounter}</Text>
+            <ShortGrass />
         </View>
         </View>
     }

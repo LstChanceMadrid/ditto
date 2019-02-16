@@ -4,6 +4,7 @@ import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
 import {buildingSprite} from '../../../constants/background/buildingSprites'
 import {color} from '../../../constants/background/color'
 import Crossroad from '../../../constants/background/templates/Crossroad';
+import ShortGrass from '../../../constants/background/wild/grass/ShortGrass';
 
 
 class HomeCenter extends Component {
@@ -15,6 +16,15 @@ class HomeCenter extends Component {
 
             <View style={styles.crossroad}>
                 <Crossroad />
+            </View>
+            <View style={styles.grass}>
+            <ShortGrass />
+            <ShortGrass />
+            <ShortGrass />
+            <ShortGrass />
+            <ShortGrass />
+            <ShortGrass />
+            <ShortGrass />
             </View>
             
             <View style={styles.middleLeftDown} />
@@ -62,5 +72,10 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left: screenWidth*10/36,
         top: screenHeight*14/36
+    },
+    grass: {
+        position: 'absolute',
+        left: screenWidth*18/36,
+        top: screenHeight*12/36
     }
 })
