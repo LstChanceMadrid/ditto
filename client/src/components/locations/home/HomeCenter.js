@@ -4,7 +4,7 @@ import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
 import {buildingSprite} from '../../../constants/background/buildingSprites'
 import {color} from '../../../constants/background/color'
 import Crossroad from '../../../constants/background/templates/Crossroad';
-import ShortGrass from '../../../constants/background/wild/grass/ShortGrass';
+import ShortGrass from '../../../constants/background/wild/grass/type/ShortGrass';
 
 
 class HomeCenter extends Component {

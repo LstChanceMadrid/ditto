@@ -57,7 +57,6 @@ class Home extends Component {
   
 
   render() {
-    console.log(this.props)
     return (
       <View style={{position: 'absolute', top: -screenHeight, left: -screenWidth, backgroundColor: 'rgba(150, 150, 150, 0.7)', marginLeft: this.props.home.x, marginTop: this.props.home.y}} width={screenWidth*3} height={screenHeight*3}>
         

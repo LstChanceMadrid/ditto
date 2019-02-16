@@ -19,7 +19,7 @@ export const initialState = {
     },
     wild: {
         isActive: false,
-        stepCounter: 0
+        stepCounter: 30
     },
     battleStatus: {
         isAttackOptions: false,
@@ -35,7 +35,7 @@ export const initialState = {
             name: 'transform'
         },
         attackSkill2: {
-            name: ''
+            name: 'tackle'
         },
         attackSkill3: {
             name: ''

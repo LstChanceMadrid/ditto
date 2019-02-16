@@ -4,8 +4,11 @@ import { connect } from 'react-redux'
 import { screenWidth, screenHeight } from '../../constants/screenDimensions'
 import { actionType } from '../../store/actionTypes/actionTypes';
 import Back from './Back'
-import AttackSkill from './AttackSkill';
+import AttackSkill1 from './attackSkills/AttackSkill1';
 import ConfirmAttack from './ConfirmAttack';
+import AttackSkill2 from './attackSkills/AttackSkill2';
+import AttackSkill3 from './attackSkills/AttackSkill3';
+import AttackSkill4 from './attackSkills/AttackSkill4';
 
  class AttackOptions extends Component {
 
@@ -25,12 +28,12 @@ import ConfirmAttack from './ConfirmAttack';
         
         <View style={styles.skillsContainer}>
           <View style={styles.row}>
-          <AttackSkill />
-          <AttackSkill />
+          <AttackSkill1 />
+          <AttackSkill2 />
           </View>
           <View style={styles.row}>
-          <AttackSkill />
-          <AttackSkill />
+          <AttackSkill3 />
+          <AttackSkill4 />
           </View>
         </View>
 
