@@ -17,17 +17,9 @@ class HomeCenter extends Component {
             <View style={styles.crossroad}>
                 <Crossroad />
             </View>
-            <View style={styles.grass}>
-            <ShortGrass />
-            <ShortGrass />
-            <ShortGrass />
-            <ShortGrass />
-            <ShortGrass />
-            <ShortGrass />
-            <ShortGrass />
-            </View>
             
             <View style={styles.middleLeftDown} />
+            
             <View style={styles.nextLevel} width={screenWidth/6} height={screenHeight/12} />
         </View>
     }

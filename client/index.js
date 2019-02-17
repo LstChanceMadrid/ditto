@@ -36,6 +36,12 @@ Navigation.registerComponent(`House`, () => (props) => (
     </Provider>
 ), () => House);
 
+Navigation.registerComponent(`EnemyRNG`, () => (props) => (
+    <Provider store={store}>
+        <EnemyRNG {...props}/>
+    </Provider>
+), () => EnemyRNG);
+
 // set the original root upon app launch
 
 Navigation.events().registerAppLaunchedListener(() => {

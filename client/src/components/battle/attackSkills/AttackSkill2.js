@@ -26,8 +26,8 @@ import { pokemonMove } from '../../../constants/pokemon/pokemonMoves'
             <TouchableOpacity style={styles.container} onPress={() => this.props.choose()}>
               <View style={styles.column}>
                 <Text>{move.name}</Text>
-                <View style={styles[move.category]}>
-                  <Text>{move.category}</Text>
+                <View style={styles[move.type]}>
+                  <Text>{move.type}</Text>
                 </View>
                 <Text>{move.type}</Text>
               </View>

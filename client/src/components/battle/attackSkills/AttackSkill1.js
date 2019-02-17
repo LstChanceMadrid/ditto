@@ -4,16 +4,17 @@ import { connect } from 'react-redux'
 import { screenWidth, screenHeight } from '../../../constants/screenDimensions'
 import { actionType } from '../../../store/actionTypes/actionTypes';
 import { pokemonMove } from '../../../constants/pokemon/pokemonMoves'
+import { attackFunction } from './attackFunctions';
 
  class AttackSkill1 extends Component {
 
-  categoryStyle = (category) => {
-    if (category === 'Normal') {
+  typeStyle = (type) => {
+    if (type === 'Normal') {
       console.log('true')
-      return category 
+      return type 
     } else {
       console.log('false')
-      return category
+      return type
     }
   }
 
@@ -35,8 +36,8 @@ import { pokemonMove } from '../../../constants/pokemon/pokemonMoves'
         <TouchableOpacity style={styles.container} onPress={() => this.props.choose()}>
           <View style={styles.column}>
             <Text>{move.name}</Text>
-            <View style={styles[move.category]}>
-              <Text>{move.category}</Text>
+            <View style={styles[move.type]}>
+              <Text>{move.type}</Text>
             </View>
             <Text>{move.type}</Text>
           </View>

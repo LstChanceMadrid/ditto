@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {StyleSheet, View} from 'react-native'
 import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
+import Corner from '../../../constants/background/templates/Corner';
 
 
 class HomeUpLeft extends Component {
@@ -8,6 +9,9 @@ class HomeUpLeft extends Component {
         return <View style={styles.container} width={screenWidth} height={screenHeight}>
         <View style={styles.top} />
         <View style={styles.left} />
+        <View style={styles.topLeftCorner}>
+            <Corner />
+        </View>
         </View>
     }
 }
@@ -33,5 +37,10 @@ const styles = StyleSheet.create({
         left: 0,
         width: screenWidth/12,
         height: screenHeight
+    },
+    topLeftCorner: {
+        position: 'absolute',
+        left: screenWidth/24,
+        top: screenHeight/24
     }
 })
