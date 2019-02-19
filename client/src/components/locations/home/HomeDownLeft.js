@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View} from 'react-native'
-import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
+import {screenHeight, screenWidth} from '../../../constants/global/screenDimensions'
 import { connect } from 'react-redux'
 import ShortGrass from '../../../constants/background/wild/grass/type/ShortGrass';
 import HomeShortGrass from '../../../constants/background/wild/grass/patches/HomeShortGrass';

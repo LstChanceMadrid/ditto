@@ -4,7 +4,7 @@ import { actionMovement } from '../actionTypes/actionMovements'
 import { actionType } from '../actionTypes/actionTypes'
 import { initialState } from './initialState'
 import { pokemonSprite } from '../../constants/pokemon/pokemonSprites';
-import { screenHeight, screenWidth } from '../../constants/screenDimensions'
+import { screenHeight, screenWidth } from '../../constants/global/screenDimensions'
 import { statistics } from '../../constants/pokemon/pokemonStats'
 
 

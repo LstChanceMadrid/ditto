@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { screenWidth, screenHeight } from '../../screenDimensions'
+import { screenWidth, screenHeight } from '../../global/screenDimensions'
 import BorderLeft from '../infrastructure/tile/BorderLeft'
 import BorderRight from '../infrastructure/tile/BorderRight'
 import BorderTop from '../infrastructure/tile/BorderTop'

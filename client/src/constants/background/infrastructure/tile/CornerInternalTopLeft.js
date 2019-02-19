@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { screenWidth, screenHeight } from '../../../screenDimensions'
+import { screenWidth, screenHeight } from '../../../global/screenDimensions'
 import {color} from '../../color'
 
 export default class CornerInternalTopLeft extends Component {

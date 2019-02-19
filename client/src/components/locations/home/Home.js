@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import {Navigation} from 'react-native-navigation'
 import {connect} from 'react-redux'
 
-import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
+import {screenHeight, screenWidth} from '../../../constants/global/screenDimensions'
 
 import Ditto from '../../sprites/Ditto'
 import DPad from '../../dpad/DPad'
@@ -57,6 +57,7 @@ class Home extends Component {
   
 
   render() {
+    console.log(this.props)
     return (
       <View style={{position: 'absolute', top: -screenHeight, left: -screenWidth, backgroundColor: 'rgba(150, 150, 150, 0.7)', marginLeft: this.props.home.x, marginTop: this.props.home.y}} width={screenWidth*3} height={screenHeight*3}>
         

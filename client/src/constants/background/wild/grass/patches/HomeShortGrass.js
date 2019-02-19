@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import {screenHeight, screenWidth} from '../../../../screenDimensions'
+import {screenHeight, screenWidth} from '../../../../global/screenDimensions'
 import ShortGrass from '../type/ShortGrass';
 
 class HomeShortGrass extends Component {

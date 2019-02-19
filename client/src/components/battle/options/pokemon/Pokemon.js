@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+
 import { connect } from 'react-redux'
-import { screenWidth, screenHeight } from '../../constants/screenDimensions'
-import Back from './Back'
+import { screenHeight, screenWidth } from '../../../../constants/global/screenDimensions'
+import { StyleSheet, Text, View } from 'react-native'
+
+import Back from '../../interactions/Back'
 
 
- class BagOptions extends Component {
+ class Pokemon extends Component {
   render() {
     return (
       <View style={styles.container}>
       <Back />
-        <Text>Bag Options</Text>
+        <Text>Pokemon options</Text>
       </View>
     )
   }
@@ -28,7 +30,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BagOptions)
+export default connect(mapStateToProps)(Pokemon)
 
 const styles = StyleSheet.create({
   container: {
@@ -36,5 +38,5 @@ const styles = StyleSheet.create({
     width: screenWidth,
     height: screenHeight*3/8,
     backgroundColor: 'yellow'
-},
+  }
 })

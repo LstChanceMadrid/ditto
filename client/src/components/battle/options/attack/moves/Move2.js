@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
-import { screenWidth, screenHeight } from '../../../constants/screenDimensions'
-import { actionType } from '../../../store/actionTypes/actionTypes';
-import { pokemonMove } from '../../../constants/pokemon/pokemonMoves'
+import { screenWidth, screenHeight } from '../../../../../constants/global/screenDimensions'
+import { actionType } from '../../../../../store/actionTypes/actionTypes';
+import { pokemonMove } from '../../../../../constants/pokemon/pokemonMoves'
 
 
- class AttackSkill4 extends Component {
+ class AttackSkill2 extends Component {
+
 
     render() {
-        let move = pokemonMove[this.props.skills.attackSkill4.name]
+        let move = pokemonMove[this.props.skills.attackSkill2.name]
     
-        if (this.props.skills.attackSkill4.name === "") {
+        if (this.props.skills.attackSkill2.name === "") {
           return (
             <View style={styles.emptyContainer}>
                 <Text style={styles.noMove}>----------</Text>
@@ -54,7 +55,7 @@ import { pokemonMove } from '../../../constants/pokemon/pokemonMoves'
         }
     }
     
-    export default connect(mapStateToProps, mapDispatchToProps)(AttackSkill4)
+    export default connect(mapStateToProps, mapDispatchToProps)(AttackSkill2)
     
     const styles = StyleSheet.create({
       container: {

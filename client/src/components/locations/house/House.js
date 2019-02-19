@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 import { connect } from 'react-redux'
 
-import {screenWidth, screenHeight} from '../../../constants/screenDimensions'
+import {screenWidth, screenHeight} from '../../../constants/global/screenDimensions'
 
 import Ditto from '../../sprites/Ditto'
 import { actionType } from '../../../store/actionTypes/actionTypes';

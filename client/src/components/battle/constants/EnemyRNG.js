@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { actionLevel } from '../../store/actionTypes/actionLevels'
+import { actionLevel } from '../../../store/actionTypes/actionLevels'
 import { connect } from 'react-redux'
-import { actionType } from '../../store/actionTypes/actionTypes';
+import { actionType } from '../../../store/actionTypes/actionTypes';
 
 
 

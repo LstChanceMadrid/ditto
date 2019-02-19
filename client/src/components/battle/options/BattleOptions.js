@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { connect } from 'react-redux'
-import {actionType} from '../../store/actionTypes/actionTypes'
-import {screenHeight, screenWidth } from '../../constants/screenDimensions'
-import {Navigation} from 'react-native-navigation'
-import AttackOptions from './AttackOptions'
-import BagOptions from './BagOptions'
-import PokemonOptions from './PokemonOptions'
+import { actionType } from '../../../store/actionTypes/actionTypes'
+import { screenHeight, screenWidth } from '../../../constants/global/screenDimensions'
+import { Navigation } from 'react-native-navigation'
+import AttackOptions from './attack/Attack'
+import BagOptions from './bag/BagOptions'
+import PokemonOptions from './pokemon/Pokemon'
 
-class Enemy extends Component {
+class BattleOptions extends Component {
 
     run = () => {
         this.props.resetWildStepCounter()
@@ -22,7 +22,7 @@ class Enemy extends Component {
         })
     }
 
-    battleActions = () => {
+    battleOptions = () => {
         return (
             <View style={styles.actionContainer}>
                 <View style={styles.actions}>
@@ -65,7 +65,7 @@ class Enemy extends Component {
             )
         } else {
             return (     
-                <View>{this.battleActions()}</View>
+                <View>{this.battleOptions()}</View>
             )
         }
     }
@@ -86,7 +86,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Enemy)
+export default connect(mapStateToProps, mapDispatchToProps)(BattleOptions)
 
 const styles = StyleSheet.create({
     actionContainer: {

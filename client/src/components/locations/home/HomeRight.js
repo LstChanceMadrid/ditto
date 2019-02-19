@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
 import {StyleSheet, View} from 'react-native'
-import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
+import {screenHeight, screenWidth} from '../../../constants/global/screenDimensions'
+import Verticle5 from '../../../constants/background/templates/Verticle5';
+
 
 
 class HomeRight extends Component {
     render() {
         return <View style={styles.container} width={screenWidth} height={screenHeight}>
         <View style={styles.right} />
+        <View style={styles.rightVerticleRoad}>
+        <Verticle5 />
+        <Verticle5 />
+        <Verticle5 />
+        </View>
+        
         </View>
     }
 }
@@ -24,5 +32,10 @@ const styles = StyleSheet.create({
         right: 0,
         width: screenWidth/12,
         height: screenHeight
+    },
+    rightVerticleRoad: {
+        position: 'absolute',
+        top: 0,
+        right: screenWidth*2/36
     }
 })

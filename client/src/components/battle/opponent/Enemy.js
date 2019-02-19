@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Image, StyleSheet, Text, View} from 'react-native'
 import { connect } from 'react-redux'
-import {screenHeight, screenWidth } from '../../constants/screenDimensions'
+import {screenHeight, screenWidth } from '../../../constants/global/screenDimensions'
 
 
 class Enemy extends Component {

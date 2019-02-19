@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { connect } from 'react-redux'
-import { screenWidth, screenHeight } from '../../constants/screenDimensions'
-import { actionType } from '../../store/actionTypes/actionTypes';
-import Back from './Back'
-import AttackSkill1 from './attackSkills/AttackSkill1';
-import ConfirmAttack from './ConfirmAttack';
-import AttackSkill2 from './attackSkills/AttackSkill2';
-import AttackSkill3 from './attackSkills/AttackSkill3';
-import AttackSkill4 from './attackSkills/AttackSkill4';
+import { screenWidth, screenHeight } from '../../../../constants/global/screenDimensions'
+import { actionType } from '../../../../store/actionTypes/actionTypes';
+import Back from '../../interactions/Back'
+import Move1 from './moves/Move1';
+import Move2 from './moves/Move2';
+import Move3 from './moves/Move3';
+import Move4 from './moves/Move4';
+import ConfirmMove from '../../interactions/ConfirmMove';
 
- class AttackOptions extends Component {
+ class Attack extends Component {
 
   confirm = () => {
     if (this.props.attack.isChosen) {
-      return <ConfirmAttack />
+      return <ConfirmMove />
     } else {
       return <Text>Choose Attack</Text>
     }
@@ -28,12 +28,12 @@ import AttackSkill4 from './attackSkills/AttackSkill4';
         
         <View style={styles.skillsContainer}>
           <View style={styles.row}>
-          <AttackSkill1 />
-          <AttackSkill2 />
+          <Move1 />
+          <Move2 />
           </View>
           <View style={styles.row}>
-          <AttackSkill3 />
-          <AttackSkill4 />
+          <Move3 />
+          <Move4 />
           </View>
         </View>
 
@@ -54,7 +54,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AttackOptions)
+export default connect(mapStateToProps, mapDispatchToProps)(Attack)
 
 const styles = StyleSheet.create({
   container: {

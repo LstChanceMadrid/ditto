@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {StyleSheet, View} from 'react-native'
-import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
-import Corner from '../../../constants/background/templates/Corner';
+import {screenHeight, screenWidth} from '../../../constants/global/screenDimensions'
+import CornerTopLeft from '../../../constants/background/templates/CornerTopLeft';
 
 
 class HomeUpLeft extends Component {
@@ -10,7 +10,7 @@ class HomeUpLeft extends Component {
         <View style={styles.top} />
         <View style={styles.left} />
         <View style={styles.topLeftCorner}>
-            <Corner />
+            <CornerTopLeft />
         </View>
         </View>
     }

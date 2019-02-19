@@ -1,4 +1,4 @@
-import {screenWidth, screenHeight} from '../../../../constants/screenDimensions'
+import {screenWidth, screenHeight} from '../../../../constants/global/screenDimensions'
 
 export const border = {
     // 1Wx1H screen

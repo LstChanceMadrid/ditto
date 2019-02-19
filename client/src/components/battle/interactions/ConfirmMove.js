@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, TouchableOpacity,  View } from 'react-native'
 import { connect } from 'react-redux'
-import { actionType } from '../../store/actionTypes/actionTypes'
-import { screenWidth } from '../../constants/screenDimensions';
+import { actionType } from '../../../store/actionTypes/actionTypes'
+import { screenWidth } from '../../../constants/global/screenDimensions';
 
 
-class ConfirmAttack extends Component {
+class ConfirmMove extends Component {
   render() {
     return (
       <View>
@@ -36,7 +36,7 @@ const mapDispatchToProps = dispatch => {
         attackOptions: () => dispatch({type: actionType.ATTACK_OPTIONS})
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ConfirmAttack)
+export default connect(mapStateToProps, mapDispatchToProps)(ConfirmMove)
 
 const styles = StyleSheet.create({
     option: {

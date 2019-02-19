@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Image, StyleSheet, View} from 'react-native'
-import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
+import {screenHeight, screenWidth} from '../../../constants/global/screenDimensions'
 import {buildingSprite} from '../../../constants/background/buildingSprites'
 import {color} from '../../../constants/background/color'
 import Crossroad from '../../../constants/background/templates/Crossroad';
@@ -19,7 +19,7 @@ class HomeCenter extends Component {
             </View>
             
             <View style={styles.middleLeftDown} />
-            
+
             <View style={styles.nextLevel} width={screenWidth/6} height={screenHeight/12} />
         </View>
     }

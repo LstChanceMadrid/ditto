@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import {StyleSheet, View} from 'react-native'
-import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
-import BorderLeft from '../../../constants/background/infrastructure/tile/BorderLeft';
+import {screenHeight, screenWidth} from '../../../constants/global/screenDimensions'
 import Interior from './../../../constants/background/infrastructure/tile/Interior'
-import BorderRight from '../../../constants/background/infrastructure/tile/BorderRight';
+import CornerInternalBottomLeft from '../../../constants/background/infrastructure/tile/CornerInternalBottomLeft';
+import CornerInternalBottomRight from '../../../constants/background/infrastructure/tile/CornerInternalBottomRight';
+import Horizontal5 from '../../../constants/background/templates/Horizontal5';
 
 
 class HomeUpCenter extends Component {
@@ -11,21 +12,16 @@ class HomeUpCenter extends Component {
         return <View style={styles.container} width={screenWidth} height={screenHeight}>
         <View style={styles.top} />
         <View style={styles.toRoute1}>
+        <Horizontal5 />
+        <Horizontal5 />
         <View style={styles.row}>
+            <CornerInternalBottomRight />
             <Interior />
             <Interior />
-            <Interior />
-            <Interior />
-            
-            </View>
-            <View style={styles.row}>
-                <BorderLeft />
-                <Interior />
-                <Interior />
-                <BorderRight />
-            </View>
-
-            
+            <CornerInternalBottomLeft />
+        </View>
+        <Horizontal5 />
+            <Horizontal5 />
         
         </View>
         </View>
@@ -47,9 +43,10 @@ const styles = StyleSheet.create({
         height: screenHeight/12,
     },
     toRoute1: {
+        flexDirection: 'row',
         position: 'absolute',
-        top: screenHeight*0/36,
-        left: screenWidth*14/36
+        top: screenHeight/24,
+        left: 0
     },
     row: {
         flexDirection: 'row'

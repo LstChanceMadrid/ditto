@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
-import { screenWidth, screenHeight } from '../../constants/screenDimensions'
-import { actionType } from '../../store/actionTypes/actionTypes';
+import { screenWidth, screenHeight } from '../../../constants/global/screenDimensions'
+import { actionType } from '../../../store/actionTypes/actionTypes';
 
 class Back extends Component {
   render() {

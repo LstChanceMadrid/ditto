@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Navigation} from 'react-native-navigation'
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
-import { screenHeight, screenWidth} from '../../constants/screenDimensions'
+import { screenHeight, screenWidth} from '../../constants/global/screenDimensions'
 
 import UpLeft from './directions/UpLeft'
 import Up from './directions/Up'

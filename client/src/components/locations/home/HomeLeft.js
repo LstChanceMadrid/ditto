@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {StyleSheet, View} from 'react-native'
-import {screenHeight, screenWidth} from '../../../constants/screenDimensions'
+import {screenHeight, screenWidth} from '../../../constants/global/screenDimensions'
 
 
 class HomeLeft extends Component {

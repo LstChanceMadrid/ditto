@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import { connect } from 'react-redux'
-import { screenWidth, screenHeight } from '../../../constants/screenDimensions'
-import { actionType } from '../../../store/actionTypes/actionTypes';
-import { pokemonMove } from '../../../constants/pokemon/pokemonMoves'
-import { attackFunction } from './attackFunctions';
+import { screenWidth, screenHeight } from '../../../../../constants/global/screenDimensions'
+import { actionType } from '../../../../../store/actionTypes/actionTypes';
+import { pokemonMove } from '../../../../../constants/pokemon/pokemonMoves'
+import { moveFunction } from './moveFunctions';
 
- class AttackSkill1 extends Component {
+ class Move1 extends Component {
 
   typeStyle = (type) => {
     if (type === 'Normal') {
@@ -65,7 +65,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AttackSkill1)
+export default connect(mapStateToProps, mapDispatchToProps)(Move1)
 
 const styles = StyleSheet.create({
   container: {

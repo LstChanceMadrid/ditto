@@ -1,4 +1,4 @@
-import {screenWidth, screenHeight} from '../../constants/screenDimensions'
+import {screenWidth, screenHeight} from '../../constants/global/screenDimensions'
 
 
 export const initialState = {
@@ -19,7 +19,7 @@ export const initialState = {
     },
     wild: {
         isActive: false,
-        stepCounter: 30
+        stepCounter: 0
     },
     battleStatus: {
         isAttackOptions: false,
